@@ -1,0 +1,301 @@
+.post {
+    width: 100%;
+    max-width: 520px;
+    margin: 30px 0;
+    background-color: rgba(30,30,30,0.6);
+    .post-info {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        .post-info__date {
+            color: #fff;
+            font-size: 18px;
+            font-family: $mainFontFam;
+        }
+
+        .post-info__user {
+            margin-left: auto;
+            color: #fff;
+            font-size: 18px;
+            font-family: $mainFontFam;
+            
+            .post-info__user-login {
+                padding: 0 5px 0 0;
+                text-decoration-line: underline;
+            }
+
+            .post-info__user-icon {
+
+            }
+        }
+
+        .post-info__delete-post {
+            margin: 0 0 0 10px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+
+            transition: color linear 0.1s;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    &.post--huge-img {
+
+        .post-content {
+            
+            height: 350px;
+            width: 100%;
+            position: relative;
+            .post-content__photo-block {
+                height: 350px;
+                width: 100%;
+                position: relative;
+
+                .post-content__photo {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .post-content__read-more-link {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+
+                    background-color: #000;
+                    color: #fff;
+                    font-family: $mainFontFam;
+                    padding: 5px 10px;
+                    border: 2px solid #000;
+
+                    transition: border linear .2s;
+                    &:hover {
+                        border: 2px solid #fff;
+                    }
+                }
+            }
+
+            .post-content__text-block {
+                position: absolute;
+                width: 85%;
+                bottom: 52px;
+                left: 0;
+                background-color: #000;
+                margin: 0 0 20px 20px;
+                .post-content__text {
+                    width: 100%;
+                    color: #fff;
+                    font-family: $mainFontFam;
+                    text-align: justify;
+                    font-size: 16px;
+                }
+
+            }
+            
+            
+        }
+    }
+
+    &.post--small-img {
+        .post-content {
+            height: 350px;
+            width: 100%;
+            display: flex;
+        
+            .post-content__photo-block {
+                position: relative;
+                width: 60%;
+                height: 350px;
+                overflow: hidden;
+
+                transition: width ease-in 0.2s;
+
+                &:hover {
+                    width: 100%;
+                    & + .post-content__text-block {
+                        width: 0%;
+                        .post-content__text {
+                            color: #000;
+                        }
+                    }
+                }
+
+                .post-content__photo {
+                    
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .post-content__read-more-link {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+
+                    background-color: #000;
+                    color: #fff;
+                    font-family: $mainFontFam;
+                    padding: 5px 10px;
+                    border: 2px solid #000;
+
+                    transition: border linear .2s;
+                    &:hover {
+                        border: 2px solid #fff;
+                    }
+                }
+            }
+
+            .post-content__text-block {
+                transition: width ease-in 0.2s;
+                width: 40%;
+                background-color: #000;
+                overflow: hidden;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .post-content__text {
+                    width: 100%;
+                    padding: 10px;
+                    color: #fff;
+                    font-family: $mainFontFam;
+                    text-align: justify;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .post-statistics {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        .post-statistics__media {
+            color: #fff;
+            font-family: $mainFontFam;
+            display: flex;
+
+            .post-statistics__media-block {
+
+                padding: 3px 7px;
+                .post-statistics__icon {
+                    display: inline-block;
+                    color: #fff;
+                    cursor: pointer;
+
+                    &.post-statistics__icon--like {
+
+                        &.active {
+                            color: red;
+                        }
+                    }
+
+                    &.post-statistics__icon--no-ptr {
+                        cursor: default;
+                    }
+                }
+                .post-statistics__media-counter {
+
+                }
+            }
+        }
+    }
+
+    .comments-block {
+
+        width: 100%;
+        margin: 20px 0 0 0;
+        .comments-block__subtitle {
+            display: inline-block;
+            width: 100%;
+            color: #fff;
+            font-family: $mainFontFam;
+            font-size: 17px;
+            text-decoration-line: underline;
+
+            margin: 0 0 10px 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .post-comment {
+
+            width: 100%;
+            padding: 10px;
+
+            .post-comment__user-block {
+
+                width: 100%;
+                display: flex;
+                .post-comment__photo-block {
+
+                    width: 70px;
+                    height: 70px;
+                    .post-comment__photo {
+                        display: block;
+                        height: 65px;
+                        width: 65px;
+                        border-radius: 32.5555px;
+                        background-color: #fff;
+                    }
+                }
+
+                .post-comment__user-post-info {
+                    width: 80%;
+                    padding: 0 0 0 5px;
+                    .post-comment__date {
+                        color: #ddd;
+                        font-family: $mainFontFam;
+                        font-size: 16px;
+                    }
+
+                    .post-comment__user-link {
+                        text-decoration: underline;
+                        color: #fff;
+                        font-size: 18px;
+                        font-weight: bold;
+                        font-family: $mainFontFam;
+                    }
+                }
+            }
+
+            .post-comment__text {
+
+                margin: 15px 0 5px 0;
+                color: #fff;
+                font-family: $mainFontFam;
+                font-size: 16px;
+            }
+
+            .post-comment__likes-block {
+
+                width: 100%;
+                display: inline-block;
+                text-align: right;
+                margin: 15px 0 15px 0;
+
+                .post-comment__add-like {
+                    cursor: pointer;
+                    color: #fff;
+                    font-size: 16px;
+
+                    &.active {
+                        color: red;
+                    }
+                }
+
+                .post-comment__likes-counter {
+                    color:#fff;
+                    font-size: 16px;
+                    font-family: $mainFontFam;
+                }
+            }
+        }
+    }
+}

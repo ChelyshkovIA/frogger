@@ -1,0 +1,17 @@
+.load-more {
+    padding: 5px 10px;
+    margin: 0 0 20px 0;
+
+    font-size: 18px;
+    font-family: $mainFontFam;
+    color: #fff;
+    background-color: #000;
+    border: 2px solid #000;
+
+    transition: border linear 0.2s;
+
+    cursor: pointer;
+    &:hover {  
+        border: 2px solid #fff;
+    }
+}

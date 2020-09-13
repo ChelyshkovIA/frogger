@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROGGER</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="frogger-icons/css/fontello.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+    <script src="js/index.js" type="module"></script>
+    <script src="js/slider.js" type="module"></script>
+</head>
+<body>
+    <div class="wallpaper">
+        <img class="body-img" src="index-header-img/header1.jpg" alt="our title photo">
+    </div>
+
+    <header class="header">
+        <div class="header__photo-block photo-block">
+
+            <h1 class="photo-block__main-title main-title">FROGGER</h1>
+
+            <h2 class="photo-block__title">Love where you're going</h2>
+            <h3 class="photo-block__subtitle">Travel community around the world</h3>
+
+            <div class="photo-block__info header-info">
+                <p class="header-info__item header-info__item--users">
+                    <span>Users:</span> <span class="header__info-data header__info-data--user">12056</span>
+                </p>
+
+                <p class="header-info__item header-info__item--posts">
+                    <span>Posts:</span> <span class="header__info-data header__info-data--posts">300128</span>
+                </p>
+
+                <p class="header-info__item header-info__item--photos">
+                    <span>Photos:</span> <span class="header__info-data header__info-data--photos">637009</span>
+                </p>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <div class="main__form-block form-block">
+
+            <form class="main__form form form--auth" action="#" id="loginForm">
+                <div class="form-header"></div>
+    
+                <p class="form-title form-title--auth">Authorization</p>
+    
+                <div class="form__field form-field">    
+                    <label class="field-label" for="authlog"><span class="icon-user-4"></span></label>
+                    <input autocomplete="off" class="field-input" type="login" id="authlog" placeholder="LOGIN" name="login">
+                </div>
+                    
+                <div class="form__field form-field">
+                    <label class="field-label" for="authpass"><span class="icon-lock-1"></span></label>
+                    <input autocomplete="off" class="field-input" type="password" id="authpass" placeholder="PASSWORD" name="password">
+                </div>
+                
+                <input class="form__submit form-submit" type="submit" value="LOGIN">
+            </form>
+    
+            <form class="main__form form form--reg" action="#" method="POST" id="regForm">
+    
+                <div class="form-header"></div>
+    
+                <p class="form-title form-title--reg">Registration</p>
+    
+                <div class="form__field form-field">    
+                    <label class="field-label" for="name"><span class="icon-user-4"></span></label>
+                    <input autocomplete="off" class="field-input" type="text" id="name" placeholder="NAME" name="name">
+                </div>
+    
+                <div class="form__field form-field">    
+                    <label class="field-label" for="surname"><span class="icon-user-4"></span></label>
+                    <input autocomplete="off" class="field-input" type="text" id="surname" placeholder="SURNAME" name="surname">
+                </div>
+    
+                <div class="form__field form-field">    
+                    <label class="field-label" for="reglog"><span class="icon-user-add"></span></label>
+                    <input autocomplete="off" class="field-input" type="login" id="reglog" placeholder="LOGIN" name="login">
+                </div>
+    
+                <div class="form__field form-field">    
+                    <label class="field-label" for="email"><span class="icon-mail-alt"></span></label>
+                    <input autocomplete="off" class="field-input" type="email" id="email" placeholder="EMAIL" name="email">
+                </div>
+
+                <div class="form__field form-field">    
+                    <label class="field-label" for="country"><span class="icon-location"></span></label>
+                    <input autocomplete="off" class="field-input" type="text" id="country" placeholder="COUNTRY" name="country">
+                </div>
+                    
+                <div class="form__field form-field">
+                    <label class="field-label" for="regpass"><span class="icon-lock-1"></span></label>
+                    <input autocomplete="off" class="field-input" type="password" id="regpass" placeholder="PASSWORD" name="password">
+                </div>
+    
+                <div class="form__field form-field">
+                    <label class="field-label" for="confpass"><span class="icon-lock-1"></span></label>
+                    <input autocomplete="off" class="field-input" type="password" id="confpass" placeholder="CONFIRM PASSWORD" name="confirmPassword">
+                </div>
+                
+                <input class="form__submit form-submit" type="submit" value="SIGN UP">
+            </form>
+        </div>
+
+
+        <div class="main__slider-block slider-block">
+            <div class="slider">
+                <img class="slider-image" src="sliderImages/1.jpg" alt="slider-photo" id="slider">
+                <button class="slider-button slider-button--left"> < </button>
+                <button class="slider-button slider-button--right"> > </button>
+            </div>
+            <div class="current-photo">
+                <div class="current-photo-point"></div>
+                <div class="current-photo-point"></div>
+                <div class="current-photo-point"></div>
+                <div class="current-photo-point"></div>
+                <div class="current-photo-point"></div>
+                <div class="current-photo-point"></div>
+            </div>
+        </div>
+
+        <div class="main__posts-block posts-block" id="feed">
+            <article class="post post--huge-img">
+                <div class="post__info post-info">
+                    <div class="post-info__date">12 october 2020</div>
+                    <a class="post-info__user" href="account.html?user=great">
+                        <span class="post-info__user-login">Great</span>
+                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
+                    </a>
+                    
+                </div>
+                
+                <div class="post__content post-content">
+
+                    <div class="post-content__photo-block">
+                        <img class="post-content__photo" src="postImages/post1.jpg" alt="some description">
+                        <a class="post-content__read-more-link" href="#">Read more</a>
+                    </div>
+
+                    <div class="post-content__text-block">
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                    </div>
+                </div>
+    
+                <div class="post__statistics post-statistics">
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon icon-reply-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                        </div>
+                    </div>
+    
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="post__comments-block comments-block">
+                    <a class="comments-block__subtitle">Comments...</a>
+                    <div class="comments-block__post-comment post-comment">
+                        <div class="post-comment__user-block">
+                            <div class="post-comment__photo-block">
+                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
+                            </div>
+    
+                            <div class="post-comment__user-post-info">
+                                <p class="post-comment__date">14 okt 2020 13:00</p>
+                                <a class="post-comment__user-link" href="#">Great Mars</a>
+                            </div>
+                        </div>
+    
+                        <p class="post-comment__text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                        </p>
+    
+                        <div class="post-comment__likes-block">
+                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
+                            <span class="post-comment__likes-counter">549</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post post--small-img">
+                <div class="post__info post-info">
+                    <div class="post-info__date">12 october 2020</div>
+                    <a class="post-info__user" href="account.html?user=great">
+                        <span class="post-info__user-login">Great</span>
+                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
+                    </a>
+                    
+                </div>
+                
+                <div class="post__content post-content">
+
+                    <div class="post-content__photo-block">
+                        <img class="post-content__photo" src="postImages/post2.jpg" alt="some description">
+                        <a class="post-content__read-more-link" href="#">Read more</a>
+                    </div>
+
+                    <div class="post-content__text-block">
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                    </div>
+                </div>
+    
+                <div class="post__statistics post-statistics">
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon icon-reply-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                        </div>
+                    </div>
+    
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="post__comments-block comments-block">
+                    <a class="comments-block__subtitle">Comments...</a>
+                    <div class="comments-block__post-comment post-comment">
+                        <div class="post-comment__user-block">
+                            <div class="post-comment__photo-block">
+                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
+                            </div>
+    
+                            <div class="post-comment__user-post-info">
+                                <p class="post-comment__date">14 okt 2020 13:00</p>
+                                <a class="post-comment__user-link" href="#">Great Mars</a>
+                            </div>
+                        </div>
+    
+                        <p class="post-comment__text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                        </p>
+    
+                        <div class="post-comment__likes-block">
+                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
+                            <span class="post-comment__likes-counter">549</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post post--small-img">
+                <div class="post__info post-info">
+                    <div class="post-info__date">12 october 2020</div>
+                    <a class="post-info__user" href="account.html?user=greatmars">
+                        <span class="post-info__user-login">Great</span>
+                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
+                    </a>
+                    
+                </div>
+                
+                <div class="post__content post-content">
+
+                    <div class="post-content__photo-block">
+                        <img class="post-content__photo" src="postImages/post3.jpg" alt="some description">
+                        <a class="post-content__read-more-link" href="#">Read more</a>
+                    </div>
+
+                    <div class="post-content__text-block">
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                    </div>
+                </div>
+    
+                <div class="post__statistics post-statistics">
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon icon-reply-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                        </div>
+                    </div>
+    
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="post__comments-block comments-block">
+                    <a class="comments-block__subtitle">Comments...</a>
+                    <div class="comments-block__post-comment post-comment">
+                        <div class="post-comment__user-block">
+                            <div class="post-comment__photo-block">
+                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
+                            </div>
+    
+                            <div class="post-comment__user-post-info">
+                                <p class="post-comment__date">14 okt 2020 13:00</p>
+                                <a class="post-comment__user-link" href="#">Great Mars</a>
+                            </div>
+                        </div>
+    
+                        <p class="post-comment__text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                        </p>
+    
+                        <div class="post-comment__likes-block">
+                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
+                            <span class="post-comment__likes-counter">549</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post post--huge-img">
+                <div class="post__info post-info">
+                    <div class="post-info__date">12 october 2020</div>
+                    <a class="post-info__user" href="account.html?user=hanna">
+                        <span class="post-info__user-login">Great</span>
+                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
+                    </a>
+                    
+                </div>
+                
+                <div class="post__content post-content">
+
+                    <div class="post-content__photo-block">
+                        <img class="post-content__photo" src="postImages/post4.jpg" alt="some description">
+                        <a class="post-content__read-more-link" href="#">Read more</a>
+                    </div>
+
+                    <div class="post-content__text-block">
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                    </div>
+                </div>
+    
+                <div class="post__statistics post-statistics">
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                        </div>
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon icon-reply-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                        </div>
+                    </div>
+    
+                    <div class="post-statistics__media">
+                        <div class="post-statistics__media-block">
+                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
+                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="post__comments-block comments-block">
+                    <a class="comments-block__subtitle">Comments...</a>
+                    <div class="comments-block__post-comment post-comment">
+                        <div class="post-comment__user-block">
+                            <div class="post-comment__photo-block">
+                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
+                            </div>
+    
+                            <div class="post-comment__user-post-info">
+                                <p class="post-comment__date">14 okt 2020 13:00</p>
+                                <a class="post-comment__user-link" href="#">Great Mars</a>
+                            </div>
+                        </div>
+    
+                        <p class="post-comment__text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                        </p>
+    
+                        <div class="post-comment__likes-block">
+                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
+                            <span class="post-comment__likes-counter">549</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <input class="main__load-more load-more" type="button" value="load more...">
+    </main>
+
+    <footer class="footer"></footer>
+</body>
+</html>
