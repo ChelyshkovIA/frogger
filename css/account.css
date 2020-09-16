@@ -19,7 +19,7 @@ ul, ol, li {
   list-style: none;
 }
 
-input {
+input, button {
   border: none;
   outline: none;
   background-color: rgba(0, 0, 0, 0);
@@ -463,6 +463,7 @@ input {
   background-color: #ddd;
 }
 .body-menu .body-menu__link {
+  cursor: pointer;
   color: #207df0;
   margin: 0 10px;
   font-family: "Abel", sans-serif;
@@ -503,6 +504,402 @@ input {
   }
   .body-menu .body-menu__link:hover .body-menu__icon {
     font-size: 23px;
+  }
+}
+.mail-block {
+  display: none;
+  z-index: 19;
+  position: fixed;
+  margin: 0 0 50px 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.mail-block.mail-block--active {
+  display: block;
+}
+.mail-block .mess-block {
+  position: relative;
+  height: calc(100vh - 100px);
+  background-color: #fff;
+  border: 2px solid #dbdec0;
+  border-top: none;
+  overflow: auto;
+  margin: 50px 0 0 0;
+  z-index: 20;
+}
+.mail-block .mess-block::-webkit-scrollbar {
+  width: 0px;
+}
+.mail-block .mess-block .searching-form {
+  z-index: 20;
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  border-bottom: 1px solid #9cbef5;
+  background-color: #fff;
+}
+.mail-block .mess-block .searching-form.searching-form--active {
+  display: flex;
+}
+.mail-block .mess-block .searching-form .searching-block__label {
+  padding: 0 15px 0 0;
+  color: #8f9092;
+  font-size: 18px;
+}
+.mail-block .mess-block .searching-form .searching-block__input {
+  color: #9e9fa1;
+  font-family: "Abel", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+.mail-block .mess-block .searching-form .searching-block__input::placeholder {
+  color: #9e9fa1;
+}
+.mail-block .mess-block .searching-form .searching-block__input:focus {
+  color: #000;
+}
+.mail-block .mess-block .dialog {
+  cursor: pointer;
+  height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 5px;
+  border-bottom: 2px solid #dbdec0;
+}
+.mail-block .mess-block .dialog:hover {
+  background-color: #f5f2f9;
+}
+.mail-block .mess-block .dialog .dialog__photo-block {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 10px 0 0;
+}
+.mail-block .mess-block .dialog .dialog__photo-block .dialog__photo {
+  display: inline-block;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+}
+.mail-block .mess-block .dialog .dialog__content-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 60px);
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__user-block {
+  height: 100%;
+  width: 70%;
+  padding: 20px 0 0 0;
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__user-name {
+  font-family: "Abel", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 0 3px 0;
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__mess-text {
+  font-family: "Abel", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c5c5c5;
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block {
+  width: 30%;
+  max-width: 88px;
+  height: 100%;
+  padding: 2px 0 0 0;
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block .dialog__date {
+  text-align: right;
+  font-family: "Abel", sans-serif;
+  color: #a5a5a5;
+  font-size: 14px;
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block .dialog__time {
+  text-align: right;
+  font-family: "Abel", sans-serif;
+  color: #a5a5a5;
+  font-size: 14px;
+}
+.mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block .dialog__flag {
+  display: inline-block;
+  margin: 8px 10px 5px 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #227bdd;
+  border-radius: 5px;
+}
+.mail-block .chat {
+  display: none;
+  position: absolute;
+  z-index: 21;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+  padding: 0 0 50px 0;
+}
+.mail-block .chat.chat--active {
+  display: block;
+}
+.mail-block .chat .chat__options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 50px;
+  border-bottom: 1px solid #dbdec0;
+}
+.mail-block .chat .chat__options-btn {
+  cursor: pointer;
+}
+.mail-block .chat .chat__options-icon {
+  color: #227bdd;
+  font-size: 18px;
+}
+.mail-block .chat .chat__options-text {
+  color: #227bdd;
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+}
+.mail-block .chat .chat__options-close-icon {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 0 auto;
+  color: #227bdd;
+  font-size: 20px;
+}
+.mail-block .chat .chat__person {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  background-color: #dbdec0;
+}
+.mail-block .chat .chat__person-photo {
+  object-fit: cover;
+  height: 35px;
+  width: 35px;
+  border-radius: 17.5px;
+}
+.mail-block .chat .chat__person-name {
+  display: inline-block;
+  padding: 0 10px;
+  font-family: "Abel", sans-serif;
+  color: #555;
+  font-weight: bold;
+}
+.mail-block .chat .chat__mess-block {
+  height: calc(100vh - 210px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  overflow-y: auto;
+  padding: 0 10px;
+}
+.mail-block .chat .chat__mess-block::-webkit-scrollbar {
+  width: 0px;
+}
+.mail-block .chat .mess {
+  width: 100%;
+  display: flex;
+}
+.mail-block .chat .mess .mess-body {
+  padding: 5px;
+  background-color: #4e4e4e;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 400px;
+}
+.mail-block .chat .mess.mess--left .mess-body {
+  margin: 15px auto 0 0;
+  background-color: #4e4e4e;
+}
+.mail-block .chat .mess.mess--right .mess-body {
+  margin: 15px 0 0 auto;
+  background-color: #868686;
+}
+.mail-block .chat .mess .mess__text {
+  color: #fff;
+  font-family: "Abel", sans-serif;
+}
+.mail-block .chat .mess .mess__time {
+  color: #fff;
+  margin: 7px 0 0 0;
+  font-family: "Abel", sans-serif;
+  font-size: 14px;
+}
+.mail-block .chat .chat__sending-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 0 50px 0;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.mail-block .chat .chat__input-block {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px 0 0;
+}
+.mail-block .chat .chat__input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+.mail-block .chat .chat__sendBtn {
+  cursor: pointer;
+  height: 40px;
+  width: 20%;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #227bdd;
+  font-family: "Abel", sans-serif;
+  font-size: 16px;
+  transition: background-color linear 0.1s;
+}
+.mail-block .chat .chat__sendBtn:hover {
+  background-color: #1e6bc1;
+}
+
+@media (min-width: 390px) {
+  .mail-block .mess-block .dialog {
+    padding: 10px;
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__user-block {
+    padding: 10px 0 0 0;
+    width: calc(100% - 88px);
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__user-name {
+    margin: 0 0 7px 0;
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block {
+    padding: 0;
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block .dialog__flag {
+    margin: 0;
+  }
+}
+@media (min-width: 450px) {
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__user-name {
+    font-size: 18px;
+    margin: 0;
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__mess-text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 500px) {
+  .mail-block .mess-block {
+    margin: 60px 0 0 0;
+    height: calc(100vh - 110px);
+  }
+  .mail-block .mess-block .searching-form {
+    height: 60px;
+  }
+  .mail-block .mess-block .dialog .dialog__photo-block .dialog__photo {
+    height: 60px;
+    width: 60px;
+  }
+  .mail-block .mess-block .dialog .dialog__content-block {
+    width: calc(100% - 70px);
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__user-name {
+    font-size: 18px;
+  }
+  .mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__mess-text {
+    font-size: 16px;
+  }
+}
+@media (min-width: 540px) {
+  .mail-block {
+    margin: 0 0 65px 0;
+  }
+  .mail-block .mess-block {
+    height: calc(100vh - 125px);
+  }
+  .mail-block .chat {
+    padding: 0 0 65px 0;
+  }
+  .mail-block .chat .chat__mess-block {
+    height: calc(100vh - 225px);
+  }
+  .mail-block .chat .chat__sending-block {
+    margin: 0 0 65px 0;
+  }
+}
+@media (min-width: 830px) {
+  .mail-block {
+    display: block;
+    top: 0;
+    left: -400px;
+    width: 440px;
+    height: 100vh;
+    transition: left ease-in 0.4s;
+  }
+  .mail-block.mail-block--active {
+    left: 65px;
+  }
+  .mail-block.mail-block--active.mail-block--chat-active {
+    width: calc(100% - 65px);
+  }
+  .mail-block.mail-block--active.mail-block--chat-active .chat--active {
+    height: 100vh;
+    top: 0;
+    width: calc(100% - 440px);
+    left: 440px;
+  }
+  .mail-block .mess-block {
+    height: calc(100% - 60px);
+    width: 440px;
+  }
+  .mail-block .mess-block .searching-form {
+    display: flex;
+    width: 440px;
+    left: -400px;
+    border-left: 2px solid #dbdec0;
+    border-right: 2px solid #dbdec0;
+    transition: left ease-in 0.4s;
+  }
+  .mail-block .mess-block .searching-form.searching-form--active {
+    left: 65px;
+  }
+  .mail-block .chat {
+    display: none;
+    padding: 0;
+    max-width: 1000px;
+  }
+  .mail-block .chat .chat__sending-block {
+    margin: 0 0 10px 0;
+  }
+  .mail-block .chat .mess.mess--left .mess-body {
+    margin: 15px auto 0 30px;
+  }
+  .mail-block .chat .mess.mess--right .mess-body {
+    margin: 15px 30px 0 auto;
   }
 }
 

@@ -13,6 +13,105 @@
     <script src="js/slider.js" type="module"></script>
 </head>
 <body>
+    <div class="body__mail-block mail-block">
+        <div class="mail-block__mess-block mess-block">
+            <form class="mess-block__searching-form searching-form">
+                <label class="searching-block__label" for="searchChat"><span class="icon-search"></span></label>
+                <input autocomplete="off" class="searching-block__input" type="text" id="searchChat" placeholder="Search chat...">
+            </form>
+
+            <article class="mess-block__dialog dialog">
+                <div class="dialog__photo-block">
+                    <img src="usersImages/default.png" alt="user photo" class="dialog__photo">
+                </div>
+
+                <div class="dialog__content-block">
+                    <div class="dialog__user-block">
+                        <p class="dialog__user-name">Uriy Shevchuk</p>
+                        <p class="dialog__mess-text">Mama take this pages away from me...</p>  
+                    </div>
+                    <div class="dialog__mess-info-block">
+                        <div class="dialog__date">12 october</div>
+                        <div class="dialog__time">14:01</div>
+                        <div class="dialog__flag"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mess-block__dialog dialog">
+                <div class="dialog__photo-block">
+                    <img src="usersImages/default.png" alt="user photo" class="dialog__photo">
+                </div>
+
+                <div class="dialog__content-block">
+                    <div class="dialog__user-block">
+                        <p class="dialog__user-name">Andrey Makarevich</p>
+                        <p class="dialog__mess-text">Let it be, let it be</p>  
+                    </div>
+                    <div class="dialog__mess-info-block">
+                        <div class="dialog__date">23 march</div>
+                        <div class="dialog__time">20:47</div>
+                        <div class="dialog__flag"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="mail-block__chat chat">
+            <div class="chat__options">
+                <button class="chat__options-btn">
+                    <span class="chat__options-icon icon-user"></span>    
+                    <span class="chat__options-text">+ Add people</span>
+                </button>
+
+                <span class="chat__options-close-icon icon-cancel"></span>
+            </div>
+
+            <div class="chat__person">
+                <img class="chat__person-photo" src="usersImages/default.png" alt="">
+                <p class="chat__person-name">Uriy Shevchuck</p>
+            </div>
+
+            <div class="chat__mess-block">
+                <article class="chat__mess mess mess--right">
+                    <div class="mess-body">
+                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
+                        <div class="mess__time">13:03</div>
+                    </div> 
+                </article>
+
+                <article class="chat__mess mess mess--left">
+                    <div class="mess-body">
+                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
+                        <div class="mess__time">13:03</div>
+                    </div> 
+                </article>
+
+                <article class="chat__mess mess mess--left">
+                    <div class="mess-body">
+                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
+                        <div class="mess__time">13:03</div>
+                    </div> 
+                </article>
+
+                <article class="chat__mess mess mess--right">
+                    <div class="mess-body">
+                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
+                        <div class="mess__time">13:03</div>
+                    </div> 
+                </article>
+            </div>
+
+            <div class="chat__sending-block">
+                <div class="chat__input-block">
+                    <input class="chat__input" type="text" placeholder="Type here..." id="chatInput">
+                </div>
+
+                <input autocomplete="off" class="chat__sendBtn" type="button" value="Send">
+            </div>
+        </div>
+    </div>
+
     <div class="wallpaper">
         <img class="body-img" src="index-header-img/header1.jpg" alt="our title photo">
     </div>

@@ -11,6 +11,34 @@
     <script src="js/account.js" type="module"></script>
 </head>
 <body>
+    <div class="body__mail-block mail-block">
+        <div class="mail-block__mess-block mess-block">
+            <form class="mess-block__searching-form searching-form">
+                <label class="searching-block__label" for="searchChat"><span class="icon-search"></span></label>
+                <input autocomplete="off" class="searching-block__input" type="text" id="searchChat" placeholder="Search chat...">
+            </form>
+
+            <article class="mess-block__dialog dialog">
+                <div class="dialog__photo-block">
+                    <img src="usersImages/default.png" alt="user photo" class="dialog__photo">
+                </div>
+
+                <div class="dialog__content-block">
+                    <div class="dialog__user-block">
+                        <p class="dialog__user-name">Uriy Shevchuk</p>
+                        <p class="dialog__mess-text">Mama take this pages away from me...</p>  
+                    </div>
+                    <div class="dialog__mess-info-block">
+                        <div class="dialog__date">12 october</div>
+                        <div class="dialog__time">14:01</div>
+                        <div class="dialog__flag"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="mail-block__dialog dialog"></div>
+    </div>
     <div class="wallpaper">
         <img class="body-img" src="index-header-img/header1.jpg" alt="our title photo">
     </div>

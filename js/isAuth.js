@@ -1,4 +1,5 @@
 import {getCookie} from './getCookie.js';
+import {openMail} from './mail.js';
 
 function isAuth() {
     let nav = document.createElement('nav');
@@ -21,15 +22,16 @@ function isAuth() {
         logOut.append(logOutIcon);
         logOut.append(logOutText);
 
-        let mail = document.createElement('a');
+        let mail = document.createElement('span');
         mail.className = 'body-menu__link';
-        mail.href = 'messages.html';
         let mailIcon = document.createElement('span');
         mailIcon.className = 'body-menu__icon icon-mail';
         let mailText = document.createElement('span');
         mailText.append('Mail');
         mail.append(mailIcon);
         mail.append(mailText);
+
+        openMail(mail);
 
         let myPage = document.createElement('a');
         myPage.className = 'body-menu__link';
