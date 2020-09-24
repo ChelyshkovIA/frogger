@@ -565,6 +565,13 @@ input, button {
 .mail-block .mess-block .searching-form .searching-block__input:focus {
   color: #000;
 }
+.mail-block .mess-block .searching-form .searching-form__close-icon {
+  cursor: pointer;
+  color: #4f83ee;
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
 .mail-block .mess-block .dialog {
   cursor: pointer;
   height: 90px;
@@ -640,6 +647,15 @@ input, button {
   height: 10px;
   background-color: #227bdd;
   border-radius: 5px;
+}
+.mail-block .mess-block .mess-block__header {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-family: "Abel", sans-serif;
+  font-size: 19px;
+  color: #bbb;
+  padding: 20px 0;
 }
 .mail-block .chat {
   display: none;

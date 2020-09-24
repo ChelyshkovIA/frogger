@@ -1,5 +1,8 @@
 import {scrollLogic} from './scrollLogic.js';
 import {isAuth} from './isAuth.js';
+import {openMail} from './mail.js';
+import {loadMail} from './loadMail.js';
+import {validateWord} from './validateWordUpper.js';
 
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -40,13 +43,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     nameVal[0] = nameVal[0].toUpperCase();
                     nameVal = nameVal.join('');
     
-                    let surnameVal = resp.info.Surname.split('');
-                    surnameVal[0] = surnameVal[0].toUpperCase();
-                    surnameVal = surnameVal.join('');
-    
-                    let countryVal = resp.info.Country.split('');
-                    countryVal[0] = countryVal[0].toUpperCase();
-                    countryVal = countryVal.join('');
+                    let surnameVal = validateWord(resp.info.Surname);
+                    let countryVal = validateWord(resp.info.Country);
     
                     name.append(`${nameVal} ${surnameVal}`);
                     login.append(`@${resp.info.Login}`);
@@ -75,6 +73,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             messageBtn.type = 'button';
                             messageBtn.className = 'account-info__btn account-info__btn--message';
                             messageBtn.value = 'Message';
+                            openMail(messageBtn);
     
                             connectionTools.append(toSubBtn);
                             connectionTools.append(messageBtn);
@@ -125,6 +124,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                 });
                             });
                         }
+                        loadMail();
                     }
     
                     break;

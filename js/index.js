@@ -2,8 +2,8 @@ import {slider} from './slider.js';
 import {scrollLogic} from './scrollLogic.js';
 import {toRegistrate} from './registration.js';
 import {login} from './login.js';
-import {isAuth} from './isAuth.js';    
-
+import {isAuth} from './isAuth.js';
+import {loadMail} from './loadMail.js';
 
 addEventListener('DOMContentLoaded', function() {
     isAuth();
@@ -16,4 +16,5 @@ addEventListener('DOMContentLoaded', function() {
     scrollLogic(bodyImg);
     toRegistrate(regForm);
     login(authForm);
+    loadMail();
 });
