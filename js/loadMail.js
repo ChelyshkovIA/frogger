@@ -41,10 +41,14 @@ function loadMail() {
 
                             let name = document.createElement('p');
                             name.className = 'dialog__user-name';
-                            name.append(`${validateWord(item.UserFromName)} ${validateWord(item.UserFromSurname)}`);
+                            name.append(`${validateWord(item.DialogName)} ${validateWord(item.DialogSurname)}`);
 
                             let text = document.createElement('p');
                             text.className = 'dialog__mess-text';
+                            let from = document.createElement('span');
+                            from.className = 'dialog__from';
+                            from.append(`${validateWord(item.UserFromName)}: `);
+                            text.append(from);    
                             text.append(item.Text);
 
                             let infoBlock = document.createElement('div');

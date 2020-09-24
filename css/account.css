@@ -622,6 +622,9 @@ input, button {
   font-weight: bold;
   color: #c5c5c5;
 }
+.mail-block .mess-block .dialog .dialog__content-block .dialog__user-block .dialog__mess-text .dialog__from {
+  color: #8192a3;
+}
 .mail-block .mess-block .dialog .dialog__content-block .dialog__mess-info-block {
   width: 30%;
   max-width: 88px;
