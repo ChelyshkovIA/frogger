@@ -5,22 +5,7 @@ import {loadMail} from './loadMail.js';
 import {validateWord} from './validateWordUpper.js';
 
 
-window.addEventListener('DOMContentLoaded', function() {
-    let params = window
-    .location
-    .search
-    .replace('?','')
-    .split('&')
-    .reduce(
-        function(p,e){
-            var a = e.split('=');
-            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
-            return p;
-        },
-        {}
-    );
-
-    let user = params.user;
+function accountLogic(user) {
     
     let getPageReq = new XMLHttpRequest();
     let url = `../php/page.php?user=${user}`;
@@ -144,4 +129,8 @@ window.addEventListener('DOMContentLoaded', function() {
         let bodyImg = document.querySelector('.body-img');
         scrollLogic(bodyImg);
     });
-})
+}
+
+export {
+    accountLogic
+}

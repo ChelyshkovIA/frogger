@@ -1,16 +1,17 @@
 import {getCookie} from './getCookie.js';
 import {openMail} from './mail.js';
+import {generateMainPage} from './generateMainPage.js';
+import {generateAccount} from './generateAccount.js';
+import {accountLogic} from './account.js';
 
 function isAuth() {
-    let nav = document.createElement('nav');
-    nav.className = 'body__menu body-menu';
+    let nav = document.querySelector('.body-menu');
+    while (nav.children.length != 0) nav.children[0].remove();
 
     let login = getCookie('user');
-
-    if(login) {
-        if(window.location.pathname == '/index.html') {
-            document.querySelector('.form-block').classList.add('form-block--hidden');
-        }
+    if (login) {
+        document.querySelector('.form-block').classList.add('form-block--hidden');
+        
 
         let logOut = document.createElement('a');
         logOut.className = 'body-menu__link body-menu__link--logout';
@@ -33,15 +34,19 @@ function isAuth() {
 
         openMail(mail);
 
-        let myPage = document.createElement('a');
+        let myPage = document.createElement('span');
         myPage.className = 'body-menu__link';
-        myPage.href = `account.html?user=${login}`;
         let myPageIcon = document.createElement('span');
         myPageIcon.className = 'body-menu__icon icon-user-4';
         let myPageText = document.createElement('span');
         myPageText.append('My page');
         myPage.append(myPageIcon);
         myPage.append(myPageText);
+
+        myPage.addEventListener('click', function() {
+            generateAccount();
+            accountLogic(login);
+        });
 
         let feed = document.createElement('a');
         feed.className = 'body-menu__link';
@@ -53,12 +58,16 @@ function isAuth() {
         feed.append(feedIcon);
         feed.append(feedText);
 
+        feed.addEventListener('click', function() {
+            generateMainPage();
+        });
+
         nav.append(logOut);
         nav.append(feed);
         nav.append(mail);
         nav.append(myPage);
 
-    }else {
+    } else {
         let logIn = document.createElement('a');
         logIn.className = 'body-menu__link body-menu__link--logIn';
         logIn.href = 'index.html#loginForm';

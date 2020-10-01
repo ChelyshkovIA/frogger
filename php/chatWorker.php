@@ -19,6 +19,7 @@
     
     $ws_worker->onMessage = function($connection, $data) use (&$users){
         global $connection_to_db;
+        $connection->send('hello');
     }; 
 
     $ws_worker->onClose = function($connection) use (&$users){ 

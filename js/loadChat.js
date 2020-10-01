@@ -1,6 +1,6 @@
 import {validateWord} from './validateWordUpper.js';
 import {clearMessList} from './clearMessList.js';
-import {chatConnection} from './chatConnection.js';
+// import {chatConnection} from './chatConnection.js';
 // import {getCookie} from './getCookie';
 
 function loadChat(item, mailBlock, chat, dialogName, login = '') {
@@ -56,7 +56,7 @@ function loadChat(item, mailBlock, chat, dialogName, login = '') {
                         messBlock.append(message);
                     });
                     
-                    chatConnection(item);
+                    // chatConnection(item);
                     break;
                 case 'no chat':
                     // item.from = getCookie('user');
@@ -65,7 +65,7 @@ function loadChat(item, mailBlock, chat, dialogName, login = '') {
                     chatInfo.append(`You don't have any messages with ${validateWord(item.DialogName)}`);
                     messBlock.append(chatInfo);
                     
-                    chatConnection(item);
+                    // chatConnection(item);
                     break;    
                 case 'err1':
                     break;

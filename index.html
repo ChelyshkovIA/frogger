@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 
     <script src="js/index.js" type="module"></script>
-    <script src="js/slider.js" type="module"></script>
 </head>
 
 <body>
+    <nav class="body__menu body-menu"></nav>
+
     <div class="body__mail-block mail-block">
         <div class="mail-block__mess-block mess-block">
             <form class="mess-block__searching-form searching-form">
@@ -23,24 +24,6 @@
                 <input autocomplete="off" class="searching-block__input" type="text" id="searchChat"
                     placeholder="Search chat...">
             </form>
-
-            <!-- <article class="mess-block__dialog dialog">
-                <div class="dialog__photo-block">
-                    <img src="usersImages/default.png" alt="user photo" class="dialog__photo">
-                </div>
-
-                <div class="dialog__content-block">
-                    <div class="dialog__user-block">
-                        <p class="dialog__user-name">Uriy Shevchuk</p>
-                        <p class="dialog__mess-text"><span class="dialog__from">Uriy: </span>Mama take this pages...</p>  
-                    </div>
-                    <div class="dialog__mess-info-block">
-                        <div class="dialog__date">12 october</div>
-                        <div class="dialog__time">14:01</div>
-                        <div class="dialog__flag"></div>
-                    </div>
-                </div>
-            </article> -->
         </div>
 
         <div class="mail-block__chat chat">
@@ -58,14 +41,7 @@
                 <p class="chat__person-name"></p>
             </div>
             
-            <div class="chat__mess-block">
-                <!-- <article class="chat__mess mess mess--right">
-                    <div class="mess-body">
-                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
-                        <div class="mess__time">13:03</div>
-                    </div> 
-                </article> -->
-            </div>
+            <div class="chat__mess-block"></div>
 
             <div class="chat__sending-block">
                 <div class="chat__input-block">
@@ -81,32 +57,9 @@
         <img class="body-img" src="index-header-img/header1.jpg" alt="our title photo">
     </div>
 
-    <header class="header">
-        <div class="header__photo-block photo-block">
+    <header class="header"></header>
 
-            <h1 class="photo-block__main-title main-title">FROGGER</h1>
-
-            <h2 class="photo-block__title">Love where you're going</h2>
-            <h3 class="photo-block__subtitle">Travel community around the world</h3>
-
-            <div class="photo-block__info header-info">
-                <p class="header-info__item header-info__item--users">
-                    <span>Users:</span> <span class="header__info-data header__info-data--user">12056</span>
-                </p>
-
-                <p class="header-info__item header-info__item--posts">
-                    <span>Posts:</span> <span class="header__info-data header__info-data--posts">300128</span>
-                </p>
-
-                <p class="header-info__item header-info__item--photos">
-                    <span>Photos:</span> <span class="header__info-data header__info-data--photos">637009</span>
-                </p>
-            </div>
-        </div>
-
-    </header>
-
-    <main class="main">
+    <main class="main main--index">
 
         <div class="main__form-block form-block">
 
@@ -181,25 +134,8 @@
             </form>
         </div>
 
-
-        <div class="main__slider-block slider-block">
-            <div class="slider">
-                <img class="slider-image" src="sliderImages/1.jpg" alt="slider-photo" id="slider">
-                <button class="slider-button slider-button--left">
-                    < </button>
-                        <button class="slider-button slider-button--right"> > </button>
-            </div>
-            <div class="current-photo">
-                <div class="current-photo-point"></div>
-                <div class="current-photo-point"></div>
-                <div class="current-photo-point"></div>
-                <div class="current-photo-point"></div>
-                <div class="current-photo-point"></div>
-                <div class="current-photo-point"></div>
-            </div>
-        </div>
-
         <div class="main__posts-block posts-block" id="feed">
+            <!-- ТАКЖЕ МОЖНО ИСПОЛЬЗОВАТЬ POST--SMALL-IMG ДЛЯ КЛАССА ПОСТА -->
             <article class="post post--huge-img">
                 <div class="post__info post-info">
                     <div class="post-info__date">12 october 2020</div>
@@ -277,243 +213,9 @@
                     </div>
                 </div>
             </article>
-
-            <article class="post post--small-img">
-                <div class="post__info post-info">
-                    <div class="post-info__date">12 october 2020</div>
-                    <a class="post-info__user" href="account.html?user=great">
-                        <span class="post-info__user-login">Great</span>
-                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
-                    </a>
-
-                </div>
-
-                <div class="post__content post-content">
-
-                    <div class="post-content__photo-block">
-                        <img class="post-content__photo" src="postImages/post2.jpg" alt="some description">
-                        <a class="post-content__read-more-link" href="#">Read more</a>
-                    </div>
-
-                    <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
-                    </div>
-                </div>
-
-                <div class="post__statistics post-statistics">
-                    <div class="post-statistics__media">
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
-                        </div>
-                        <div class="post-statistics__media-block">
-                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
-                        </div>
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon icon-reply-1"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
-                        </div>
-                    </div>
-
-                    <div class="post-statistics__media">
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post__comments-block comments-block">
-                    <a class="comments-block__subtitle">Comments...</a>
-                    <div class="comments-block__post-comment post-comment">
-                        <div class="post-comment__user-block">
-                            <div class="post-comment__photo-block">
-                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
-                            </div>
-
-                            <div class="post-comment__user-post-info">
-                                <p class="post-comment__date">14 okt 2020 13:00</p>
-                                <a class="post-comment__user-link" href="#">Great Mars</a>
-                            </div>
-                        </div>
-
-                        <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
-                            numquam doloremque fugit?
-                        </p>
-
-                        <div class="post-comment__likes-block">
-                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
-                            <span class="post-comment__likes-counter">549</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post post--small-img">
-                <div class="post__info post-info">
-                    <div class="post-info__date">12 october 2020</div>
-                    <a class="post-info__user" href="account.html?user=greatmars">
-                        <span class="post-info__user-login">Great</span>
-                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
-                    </a>
-
-                </div>
-
-                <div class="post__content post-content">
-
-                    <div class="post-content__photo-block">
-                        <img class="post-content__photo" src="postImages/post3.jpg" alt="some description">
-                        <a class="post-content__read-more-link" href="#">Read more</a>
-                    </div>
-
-                    <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
-                    </div>
-                </div>
-
-                <div class="post__statistics post-statistics">
-                    <div class="post-statistics__media">
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
-                        </div>
-                        <div class="post-statistics__media-block">
-                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
-                        </div>
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon icon-reply-1"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
-                        </div>
-                    </div>
-
-                    <div class="post-statistics__media">
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post__comments-block comments-block">
-                    <a class="comments-block__subtitle">Comments...</a>
-                    <div class="comments-block__post-comment post-comment">
-                        <div class="post-comment__user-block">
-                            <div class="post-comment__photo-block">
-                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
-                            </div>
-
-                            <div class="post-comment__user-post-info">
-                                <p class="post-comment__date">14 okt 2020 13:00</p>
-                                <a class="post-comment__user-link" href="#">Great Mars</a>
-                            </div>
-                        </div>
-
-                        <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
-                            numquam doloremque fugit?
-                        </p>
-
-                        <div class="post-comment__likes-block">
-                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
-                            <span class="post-comment__likes-counter">549</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post post--huge-img">
-                <div class="post__info post-info">
-                    <div class="post-info__date">12 october 2020</div>
-                    <a class="post-info__user" href="account.html?user=hanna">
-                        <span class="post-info__user-login">Great</span>
-                        <span class="post-info__user-icon"><span class="icon-user"></span></span>
-                    </a>
-
-                </div>
-
-                <div class="post__content post-content">
-
-                    <div class="post-content__photo-block">
-                        <img class="post-content__photo" src="postImages/post4.jpg" alt="some description">
-                        <a class="post-content__read-more-link" href="#">Read more</a>
-                    </div>
-
-                    <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
-                    </div>
-                </div>
-
-                <div class="post__statistics post-statistics">
-                    <div class="post-statistics__media">
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
-                        </div>
-                        <div class="post-statistics__media-block">
-                            <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
-                        </div>
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon icon-reply-1"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
-                        </div>
-                    </div>
-
-                    <div class="post-statistics__media">
-                        <div class="post-statistics__media-block">
-                            <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span
-                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="post__comments-block comments-block">
-                    <a class="comments-block__subtitle">Comments...</a>
-                    <div class="comments-block__post-comment post-comment">
-                        <div class="post-comment__user-block">
-                            <div class="post-comment__photo-block">
-                                <img class="post-comment__photo" src="usersImages/default.png" alt="">
-                            </div>
-
-                            <div class="post-comment__user-post-info">
-                                <p class="post-comment__date">14 okt 2020 13:00</p>
-                                <a class="post-comment__user-link" href="#">Great Mars</a>
-                            </div>
-                        </div>
-
-                        <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
-                            numquam doloremque fugit?
-                        </p>
-
-                        <div class="post-comment__likes-block">
-                            <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
-                            <span class="post-comment__likes-counter">549</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
         </div>
 
-        <input class="main__load-more load-more" type="button" value="load more...">
+        <!-- <input class="main__load-more load-more" type="button" value="load more..."> -->
     </main>
 
     <footer class="footer"></footer>

@@ -14,6 +14,7 @@ function loadMail() {
             switch(resp.status) {
                 case 'ok':
                     let messBlock = document.querySelector('.mess-block');
+                    while (messBlock.children.length != 1) messBlock.children[1].remove();
                     if(resp.body.length == 0) {
                         let header = document.createElement('p');
                         header.className = 'mess-block__header';

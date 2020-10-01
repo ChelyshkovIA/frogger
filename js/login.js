@@ -1,3 +1,6 @@
+import {generateAccount} from './generateAccount.js';
+import {accountLogic} from './account.js';
+
 function login(form) {
     function renameFormHeader (text, className, removeState = true) {
         let header = document.querySelector('.form-title--auth');
@@ -43,7 +46,8 @@ function login(form) {
 
                     switch(resp.status) {
                         case 'ok':
-                            window.location.href = `account.html?user=${resp.login}`;
+                            generateAccount();
+                            accountLogic(resp.login);
                             break;
                         case 'err1' :
                             renameFormHeader ('Empty values!', 'form-title--wrong');
@@ -55,7 +59,7 @@ function login(form) {
                             renameFormHeader ('Not valid data!', 'form-title--wrong');
                             break;    
                         default:
-                            return;            
+                            return false;            
                     }
                 }catch(err) {
                     alert('error!');

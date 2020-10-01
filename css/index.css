@@ -26,113 +26,24 @@ input, button {
 }
 
 .header {
+  width: 100%;
+}
+.header.header--index {
   height: 100vh;
-  width: 100%;
-}
-.header .photo-block {
-  width: 100%;
-}
-.header .photo-block .main-title {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  margin: 20vh 0 0 0;
-  font-family: "Abel", sans-serif;
-  color: #888;
-  font-size: 40px;
-  font-weight: bold;
-}
-.header .photo-block .photo-block__title {
-  display: inline-block;
-  width: 100%;
-  margin: calc(40vh - 50px) 0 0 0;
-  color: #fff;
-  font-size: 25px;
-  font-family: "Abel", sans-serif;
-  padding: 0 15px;
-}
-.header .photo-block .photo-block__subtitle {
-  display: inline-block;
-  width: 100%;
-  margin: 10px 0 0 0;
-  padding: 0 15px;
-  color: #bbb;
-  font-family: "Abel", sans-serif;
-  font-size: 17px;
-}
-.header .photo-block .header-info {
-  margin: 40px 0 50px 0;
-  padding: 0 15px;
-}
-.header .photo-block .header-info .header-info__item {
-  color: #bbb;
-  font-size: 17px;
-  font-family: "Abel", sans-serif;
-  display: flex;
-  justify-content: space-between;
-}
-.header .photo-block .header-info .header-info__item .header__info-data {
-  display: inline-block;
-  margin: 0 0 0 15px;
 }
 
 @media (min-width: 700px) {
-  .header {
+  .header.header--index {
     height: auto;
   }
-  .header .photo-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .header .photo-block .main-title {
-    margin: 40px 0 0 0;
-  }
-  .header .photo-block .photo-block__title {
-    text-align: center;
-    letter-spacing: 3px;
-    font-size: 30px;
-    color: #fff;
-    display: inline-block;
-    margin: 100px 0 0 0;
-  }
-  .header .photo-block .photo-block__subtitle {
-    margin: 10px auto;
-    width: auto;
-    text-align: center;
-    color: #fff;
-    display: inline-block;
-    background-color: #000;
-    font-size: 20px;
-    letter-spacing: 2.2px;
-    padding: 3px 7px;
-  }
-  .header .photo-block .header-info {
-    margin: 150px 0 40px 0;
-  }
-  .header .photo-block .header-info .header-info__item {
-    color: #cfd1d6;
-  }
 }
-@media (min-width: 1020px) {
-  .header .photo-block .main-title {
-    font-size: 60px;
-    margin: 80px 0 0 0;
-  }
-  .header .photo-block .photo-block__title {
-    font-size: 45px;
-    font-weight: bold;
-  }
-  .header .photo-block .photo-block__subtitle {
-    letter-spacing: 5px;
-    font-size: 25px;
-    padding: 5px 24px;
-  }
-}
-.main {
+.main.main--index {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.main .main--account {
+  width: 100%;
 }
 .main .form-block {
   width: 100%;
@@ -1110,6 +1021,240 @@ input, button {
   .mail-block .chat .mess.mess--right .mess-body {
     margin: 15px 30px 0 auto;
   }
+}
+.photo-block {
+  width: 100%;
+}
+.photo-block .main-title {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 20vh 0 0 0;
+  font-family: "Abel", sans-serif;
+  color: #888;
+  font-size: 40px;
+  font-weight: bold;
+}
+.photo-block .photo-block__title {
+  display: inline-block;
+  width: 100%;
+  margin: calc(40vh - 50px) 0 0 0;
+  color: #fff;
+  font-size: 25px;
+  font-family: "Abel", sans-serif;
+  padding: 0 15px;
+}
+.photo-block .photo-block__subtitle {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 0 15px;
+  color: #bbb;
+  font-family: "Abel", sans-serif;
+  font-size: 17px;
+}
+.photo-block .header-info {
+  margin: 40px 0 50px 0;
+  padding: 0 15px;
+}
+.photo-block .header-info .header-info__item {
+  color: #bbb;
+  font-size: 17px;
+  font-family: "Abel", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+.photo-block .header-info .header-info__item .header__info-data {
+  display: inline-block;
+  margin: 0 0 0 15px;
+}
+
+@media (min-width: 700px) {
+  .photo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-block .main-title {
+    margin: 40px 0 0 0;
+  }
+  .photo-block .photo-block__title {
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 30px;
+    color: #fff;
+    display: inline-block;
+    margin: 100px 0 0 0;
+  }
+  .photo-block .photo-block__subtitle {
+    margin: 10px auto;
+    width: auto;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    background-color: #000;
+    font-size: 20px;
+    letter-spacing: 2.2px;
+    padding: 3px 7px;
+  }
+  .photo-block .header-info {
+    margin: 150px 0 40px 0;
+  }
+  .photo-block .header-info .header-info__item {
+    color: #cfd1d6;
+  }
+}
+@media (min-width: 1020px) {
+  .photo-block .main-title {
+    font-size: 60px;
+    margin: 80px 0 0 0;
+  }
+  .photo-block .photo-block__title {
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .photo-block .photo-block__subtitle {
+    letter-spacing: 5px;
+    font-size: 25px;
+    padding: 5px 24px;
+  }
+}
+.user-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px 0 20px;
+}
+.user-info .user-info__img-block {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.user-info .user-info__img-block .user-info__user-image {
+  display: inline-block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+.user-info .user-info__user-name {
+  font-family: "Abel", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #454545;
+  padding: 20px 0 0 0;
+}
+.user-info .user-info__about {
+  width: 100%;
+  max-width: 520px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+}
+.user-info .user-info__about .user-info__login {
+  font-family: "Abel", sans-serif;
+  margin: 0 20px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555555;
+}
+.user-info .user-info__about .user-info__country {
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+  color: #555555;
+}
+.user-info .user-info__about .user-info__country .user-info__country-icon {
+  font-size: 25px;
+}
+.user-info .user-info__about .user-info__country .user-info__country-icon:before {
+  margin: 0;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 65px 0;
+}
+.account-info .account-info__user-type {
+  font-family: "Abel", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #000;
+  padding: 0 10px;
+}
+.account-info .account-info__connection-tools {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0 0 0;
+}
+.account-info .account-info__connection-tools.account-info__connection-tools--active {
+  display: flex;
+}
+.account-info .account-info__connection-tools .account-info__btn {
+  min-width: 118px;
+  display: inline-block;
+  margin: 0 30px;
+  font-family: "Abel", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.account-info .account-info__connection-tools .account-info__btn:hover {
+  background-color: white;
+  color: #555;
+}
+.account-info .account-info__connection-tools .account-info__btn.account-info__btn--unsub {
+  color: coral;
+}
+.account-info .account-info__connection-tools .account-info__btn.account-info__btn--sub {
+  color: lightgreen;
+}
+.account-info .account-info__block {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0 0 0;
+  background-color: rgba(220, 220, 220, 0.6);
+}
+.account-info .account-info__block .account-info__block-item {
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #888;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color linear 0.1s;
+}
+.account-info .account-info__block .account-info__block-item:hover {
+  background-color: white;
+}
+.account-info .account-info__block .account-info__block-item .account-info__block-item-text {
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+}
+.account-info .account-info__block .account-info__block-item .account-info__block-item-counter {
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+}
+.account-info .account-info__block .account-info__block-item .account-info__block-item-icon {
+  color: #0391e4;
+  cursor: pointer;
+  padding: 0 0 0 3px;
+  transition: font-size linear 0.2s, padding linear 0.2s;
+}
+.account-info .account-info__block .account-info__block-item .account-info__block-item-icon:hover {
+  font-size: 18px;
+  padding: 0 0 0 0;
 }
 
 /*# sourceMappingURL=index.css.map */

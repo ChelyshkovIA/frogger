@@ -1,8 +1,14 @@
 .main {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    &.main--index {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main--account {
+        width: 100%;
+    }
 
     .form-block {
 
