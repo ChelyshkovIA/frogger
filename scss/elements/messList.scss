@@ -1,3 +1,23 @@
+@keyframes rollingLoad {
+    0%  {
+        transform: rotate(0deg);
+        border-top: 2px solid rgb(104, 100, 124); 
+        border-bottom: 2px solid rgb(104, 100, 124); 
+    }
+
+    50% {
+        transform: rotate(180deg);
+        border-top: 2px solid rgb(104, 100, 124, 0);
+        border-bottom: 2px solid rgb(104, 100, 124, 0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-top: 2px solid rgb(104, 100, 124); 
+        border-bottom: 2px solid rgb(104, 100, 124);
+    }
+}
+
 .mail-block {
     display: none;
     z-index: 19;
@@ -242,6 +262,7 @@
         }
         
         .chat__mess-block {
+            position: relative;
             height: calc(100vh - 210px);
             display: flex;
             flex-wrap: wrap;
@@ -249,7 +270,37 @@
             overflow-y: auto;
             padding: 0 10px;
 
-            &::-webkit-scrollbar {width:0px;}            
+            &::-webkit-scrollbar {width:0px;}
+        }
+
+        .chat__info {
+            width: 100%;
+            height: 30px;
+            margin: auto;
+            text-align: center;
+            font-family: $mainFontFam;
+            font-size: 17px;
+        }
+
+        .chat__loading-indicator {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 3px solid rgb(104, 100, 124);
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            border-left: 3px solid rgba(0,0,0,0);
+            border-right: 3px solid rgba(0,0,0,0);
+
+            animation-name: rollingLoad;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 1s;
         }
 
         .mess {

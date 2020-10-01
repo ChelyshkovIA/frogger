@@ -1,4 +1,5 @@
 import {validateWord} from './validateWordUpper.js';
+import {loadChat} from './loadChat.js';
 
 function loadMail() {
     let req = new XMLHttpRequest();
@@ -12,8 +13,6 @@ function loadMail() {
 
             switch(resp.status) {
                 case 'ok':
-                    console.log(resp.body);
-
                     let messBlock = document.querySelector('.mess-block');
                     if(resp.body.length == 0) {
                         let header = document.createElement('p');
@@ -21,7 +20,6 @@ function loadMail() {
                         header.append('You don\'t have any messages yet');
                         messBlock.append(header);
                     }else {
-                        let chatsArr = [];
                         let messBlock = document.querySelector('.mess-block');
                         resp.body.forEach(item => {
                             let article = document.createElement('article');
@@ -65,7 +63,6 @@ function loadMail() {
                             let flag = document.createElement('div');
                             flag.className = 'dialog__flag';
 
-                            
                             userBlock.append(name);
                             userBlock.append(text);
 
@@ -80,6 +77,14 @@ function loadMail() {
 
                             article.append(photoBlock);
                             article.append(contentBlock);
+                            
+                            let mailBlock  = document.querySelector('.mail-block');
+                            let chat       = mailBlock.querySelector('.chat');
+                            let dialogName = document.querySelector('.chat__person-name');
+
+                            article.addEventListener('click', function() {
+                                loadChat(item, mailBlock, chat, dialogName);
+                            });
 
                             messBlock.append(article);
                         });

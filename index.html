@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,18 @@
     <script src="js/index.js" type="module"></script>
     <script src="js/slider.js" type="module"></script>
 </head>
+
 <body>
     <div class="body__mail-block mail-block">
         <div class="mail-block__mess-block mess-block">
             <form class="mess-block__searching-form searching-form">
                 <span class="searching-form__close-icon icon-left"></span>
                 <label class="searching-block__label" for="searchChat"><span class="icon-search"></span></label>
-                <input autocomplete="off" class="searching-block__input" type="text" id="searchChat" placeholder="Search chat...">
+                <input autocomplete="off" class="searching-block__input" type="text" id="searchChat"
+                    placeholder="Search chat...">
             </form>
 
-            <article class="mess-block__dialog dialog">
+            <!-- <article class="mess-block__dialog dialog">
                 <div class="dialog__photo-block">
                     <img src="usersImages/default.png" alt="user photo" class="dialog__photo">
                 </div>
@@ -37,13 +40,13 @@
                         <div class="dialog__flag"></div>
                     </div>
                 </div>
-            </article>
+            </article> -->
         </div>
 
         <div class="mail-block__chat chat">
             <div class="chat__options">
                 <button class="chat__options-btn">
-                    <span class="chat__options-icon icon-user"></span>    
+                    <span class="chat__options-icon icon-user"></span>
                     <span class="chat__options-text">+ Add people</span>
                 </button>
 
@@ -52,37 +55,16 @@
 
             <div class="chat__person">
                 <img class="chat__person-photo" src="usersImages/default.png" alt="">
-                <p class="chat__person-name">Uriy Shevchuck</p>
+                <p class="chat__person-name"></p>
             </div>
-
+            
             <div class="chat__mess-block">
-                <article class="chat__mess mess mess--right">
+                <!-- <article class="chat__mess mess mess--right">
                     <div class="mess-body">
                         <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
                         <div class="mess__time">13:03</div>
                     </div> 
-                </article>
-
-                <article class="chat__mess mess mess--left">
-                    <div class="mess-body">
-                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
-                        <div class="mess__time">13:03</div>
-                    </div> 
-                </article>
-
-                <article class="chat__mess mess mess--left">
-                    <div class="mess-body">
-                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
-                        <div class="mess__time">13:03</div>
-                    </div> 
-                </article>
-
-                <article class="chat__mess mess mess--right">
-                    <div class="mess-body">
-                        <p class="mess__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni animi fugiat eius natus explicabo autem!</p>
-                        <div class="mess__time">13:03</div>
-                    </div> 
-                </article>
+                </article> -->
             </div>
 
             <div class="chat__sending-block">
@@ -90,7 +72,7 @@
                     <input class="chat__input" type="text" placeholder="Type here..." id="chatInput">
                 </div>
 
-                <input autocomplete="off" class="chat__sendBtn" type="button" value="Send">
+                <input autocomplete="off" class="chat__sendBtn" type="button" value="Send" id="sendBtn">
             </div>
         </div>
     </div>
@@ -130,63 +112,71 @@
 
             <form class="main__form form form--auth" action="#" id="loginForm">
                 <div class="form-header"></div>
-    
+
                 <p class="form-title form-title--auth">Authorization</p>
-    
-                <div class="form__field form-field">    
+
+                <div class="form__field form-field">
                     <label class="field-label" for="authlog"><span class="icon-user-4"></span></label>
-                    <input autocomplete="off" class="field-input" type="login" id="authlog" placeholder="LOGIN" name="login">
+                    <input autocomplete="off" class="field-input" type="login" id="authlog" placeholder="LOGIN"
+                        name="login">
                 </div>
-                    
+
                 <div class="form__field form-field">
                     <label class="field-label" for="authpass"><span class="icon-lock-1"></span></label>
-                    <input autocomplete="off" class="field-input" type="password" id="authpass" placeholder="PASSWORD" name="password">
+                    <input autocomplete="off" class="field-input" type="password" id="authpass" placeholder="PASSWORD"
+                        name="password">
                 </div>
-                
+
                 <input class="form__submit form-submit" type="submit" value="LOGIN">
             </form>
-    
+
             <form class="main__form form form--reg" action="#" method="POST" id="regForm">
-    
+
                 <div class="form-header"></div>
-    
+
                 <p class="form-title form-title--reg">Registration</p>
-    
-                <div class="form__field form-field">    
+
+                <div class="form__field form-field">
                     <label class="field-label" for="name"><span class="icon-user-4"></span></label>
                     <input autocomplete="off" class="field-input" type="text" id="name" placeholder="NAME" name="name">
                 </div>
-    
-                <div class="form__field form-field">    
+
+                <div class="form__field form-field">
                     <label class="field-label" for="surname"><span class="icon-user-4"></span></label>
-                    <input autocomplete="off" class="field-input" type="text" id="surname" placeholder="SURNAME" name="surname">
-                </div>
-    
-                <div class="form__field form-field">    
-                    <label class="field-label" for="reglog"><span class="icon-user-add"></span></label>
-                    <input autocomplete="off" class="field-input" type="login" id="reglog" placeholder="LOGIN" name="login">
-                </div>
-    
-                <div class="form__field form-field">    
-                    <label class="field-label" for="email"><span class="icon-mail-alt"></span></label>
-                    <input autocomplete="off" class="field-input" type="email" id="email" placeholder="EMAIL" name="email">
+                    <input autocomplete="off" class="field-input" type="text" id="surname" placeholder="SURNAME"
+                        name="surname">
                 </div>
 
-                <div class="form__field form-field">    
-                    <label class="field-label" for="country"><span class="icon-location"></span></label>
-                    <input autocomplete="off" class="field-input" type="text" id="country" placeholder="COUNTRY" name="country">
+                <div class="form__field form-field">
+                    <label class="field-label" for="reglog"><span class="icon-user-add"></span></label>
+                    <input autocomplete="off" class="field-input" type="login" id="reglog" placeholder="LOGIN"
+                        name="login">
                 </div>
-                    
+
+                <div class="form__field form-field">
+                    <label class="field-label" for="email"><span class="icon-mail-alt"></span></label>
+                    <input autocomplete="off" class="field-input" type="email" id="email" placeholder="EMAIL"
+                        name="email">
+                </div>
+
+                <div class="form__field form-field">
+                    <label class="field-label" for="country"><span class="icon-location"></span></label>
+                    <input autocomplete="off" class="field-input" type="text" id="country" placeholder="COUNTRY"
+                        name="country">
+                </div>
+
                 <div class="form__field form-field">
                     <label class="field-label" for="regpass"><span class="icon-lock-1"></span></label>
-                    <input autocomplete="off" class="field-input" type="password" id="regpass" placeholder="PASSWORD" name="password">
+                    <input autocomplete="off" class="field-input" type="password" id="regpass" placeholder="PASSWORD"
+                        name="password">
                 </div>
-    
+
                 <div class="form__field form-field">
                     <label class="field-label" for="confpass"><span class="icon-lock-1"></span></label>
-                    <input autocomplete="off" class="field-input" type="password" id="confpass" placeholder="CONFIRM PASSWORD" name="confirmPassword">
+                    <input autocomplete="off" class="field-input" type="password" id="confpass"
+                        placeholder="CONFIRM PASSWORD" name="confirmPassword">
                 </div>
-                
+
                 <input class="form__submit form-submit" type="submit" value="SIGN UP">
             </form>
         </div>
@@ -195,8 +185,9 @@
         <div class="main__slider-block slider-block">
             <div class="slider">
                 <img class="slider-image" src="sliderImages/1.jpg" alt="slider-photo" id="slider">
-                <button class="slider-button slider-button--left"> < </button>
-                <button class="slider-button slider-button--right"> > </button>
+                <button class="slider-button slider-button--left">
+                    < </button>
+                        <button class="slider-button slider-button--right"> > </button>
             </div>
             <div class="current-photo">
                 <div class="current-photo-point"></div>
@@ -216,9 +207,9 @@
                         <span class="post-info__user-login">Great</span>
                         <span class="post-info__user-icon"><span class="icon-user"></span></span>
                     </a>
-                    
+
                 </div>
-                
+
                 <div class="post__content post-content">
 
                     <div class="post-content__photo-block">
@@ -227,34 +218,39 @@
                     </div>
 
                     <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
                     </div>
                 </div>
-    
+
                 <div class="post__statistics post-statistics">
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon icon-reply-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
                         </div>
                     </div>
-    
+
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="post__comments-block comments-block">
                     <a class="comments-block__subtitle">Comments...</a>
                     <div class="comments-block__post-comment post-comment">
@@ -262,17 +258,18 @@
                             <div class="post-comment__photo-block">
                                 <img class="post-comment__photo" src="usersImages/default.png" alt="">
                             </div>
-    
+
                             <div class="post-comment__user-post-info">
                                 <p class="post-comment__date">14 okt 2020 13:00</p>
                                 <a class="post-comment__user-link" href="#">Great Mars</a>
                             </div>
                         </div>
-    
+
                         <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
+                            numquam doloremque fugit?
                         </p>
-    
+
                         <div class="post-comment__likes-block">
                             <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
                             <span class="post-comment__likes-counter">549</span>
@@ -288,9 +285,9 @@
                         <span class="post-info__user-login">Great</span>
                         <span class="post-info__user-icon"><span class="icon-user"></span></span>
                     </a>
-                    
+
                 </div>
-                
+
                 <div class="post__content post-content">
 
                     <div class="post-content__photo-block">
@@ -299,34 +296,39 @@
                     </div>
 
                     <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
                     </div>
                 </div>
-    
+
                 <div class="post__statistics post-statistics">
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon icon-reply-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
                         </div>
                     </div>
-    
+
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="post__comments-block comments-block">
                     <a class="comments-block__subtitle">Comments...</a>
                     <div class="comments-block__post-comment post-comment">
@@ -334,17 +336,18 @@
                             <div class="post-comment__photo-block">
                                 <img class="post-comment__photo" src="usersImages/default.png" alt="">
                             </div>
-    
+
                             <div class="post-comment__user-post-info">
                                 <p class="post-comment__date">14 okt 2020 13:00</p>
                                 <a class="post-comment__user-link" href="#">Great Mars</a>
                             </div>
                         </div>
-    
+
                         <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
+                            numquam doloremque fugit?
                         </p>
-    
+
                         <div class="post-comment__likes-block">
                             <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
                             <span class="post-comment__likes-counter">549</span>
@@ -360,9 +363,9 @@
                         <span class="post-info__user-login">Great</span>
                         <span class="post-info__user-icon"><span class="icon-user"></span></span>
                     </a>
-                    
+
                 </div>
-                
+
                 <div class="post__content post-content">
 
                     <div class="post-content__photo-block">
@@ -371,34 +374,39 @@
                     </div>
 
                     <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
                     </div>
                 </div>
-    
+
                 <div class="post__statistics post-statistics">
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon icon-reply-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
                         </div>
                     </div>
-    
+
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="post__comments-block comments-block">
                     <a class="comments-block__subtitle">Comments...</a>
                     <div class="comments-block__post-comment post-comment">
@@ -406,17 +414,18 @@
                             <div class="post-comment__photo-block">
                                 <img class="post-comment__photo" src="usersImages/default.png" alt="">
                             </div>
-    
+
                             <div class="post-comment__user-post-info">
                                 <p class="post-comment__date">14 okt 2020 13:00</p>
                                 <a class="post-comment__user-link" href="#">Great Mars</a>
                             </div>
                         </div>
-    
+
                         <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
+                            numquam doloremque fugit?
                         </p>
-    
+
                         <div class="post-comment__likes-block">
                             <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
                             <span class="post-comment__likes-counter">549</span>
@@ -432,9 +441,9 @@
                         <span class="post-info__user-login">Great</span>
                         <span class="post-info__user-icon"><span class="icon-user"></span></span>
                     </a>
-                    
+
                 </div>
-                
+
                 <div class="post__content post-content">
 
                     <div class="post-content__photo-block">
@@ -443,34 +452,39 @@
                     </div>
 
                     <div class="post-content__text-block">
-                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
+                        <p class="post-content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                            atque in, autem officiis illo temporibus nihil sunt animi aliquid! Culpa.</p>
                     </div>
                 </div>
-    
+
                 <div class="post__statistics post-statistics">
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--like icon-heart active"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--likes">12041</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <a href="#" class="post-statistics__icon icon-comment-2"></a>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--comments">11</span>
                         </div>
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon icon-reply-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--reposts">379</span>
                         </div>
                     </div>
-    
+
                     <div class="post-statistics__media">
                         <div class="post-statistics__media-block">
                             <span class="post-statistics__icon post-statistics__icon--no-ptr icon-eye-1"></span>
-                            <span class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
+                            <span
+                                class="post-statistics__media-counter post-statistics__media-counter--watch">30487</span>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="post__comments-block comments-block">
                     <a class="comments-block__subtitle">Comments...</a>
                     <div class="comments-block__post-comment post-comment">
@@ -478,17 +492,18 @@
                             <div class="post-comment__photo-block">
                                 <img class="post-comment__photo" src="usersImages/default.png" alt="">
                             </div>
-    
+
                             <div class="post-comment__user-post-info">
                                 <p class="post-comment__date">14 okt 2020 13:00</p>
                                 <a class="post-comment__user-link" href="#">Great Mars</a>
                             </div>
                         </div>
-    
+
                         <p class="post-comment__text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi numquam doloremque fugit?
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed maxime voluptatem, commodi
+                            numquam doloremque fugit?
                         </p>
-    
+
                         <div class="post-comment__likes-block">
                             <span class="post-comment__add-like active"><span class="icon-heart"></span></span>
                             <span class="post-comment__likes-counter">549</span>
@@ -503,4 +518,5 @@
 
     <footer class="footer"></footer>
 </body>
+
 </html>

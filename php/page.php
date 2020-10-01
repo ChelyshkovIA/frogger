@@ -23,6 +23,13 @@
     $getFollowingsQuery = "SELECT * FROM Followers WHERE Followers.IdFollower = '$userId'";
     $getPhotos = "SELECT Id FROM PostsPhotos WHERE PostsPhotos.IdUser = '$userId'";
     $getPosts = "SELECT Id FROM Posts WHERE Posts.IdUser = '$userId'";
+    $getChatsWithUser = 
+    "SELECT Chats.Id FROM Chats
+    INNER JOIN ChatsUsers AS ChatsUsersFrom ON Chats.Id = ChatsUsersFrom.IdChat
+    INNER JOIN Users AS UsersFrom ON ChatsUsersFrom.IdUser = UsersFrom.Id
+    INNER JOIN ChatsUsers AS ChatsUsersTo ON Chats.Id = ChatsUsersTo.IdChat
+    INNER JOIN Users AS UsersTo ON ChatsUsersTo.IdUser = UsersTo.Id
+    WHERE UsersTo.Login = '$user' AND UsersFrom.Login = '$cookieUser'";
 
     $res = $connection_to_db->query($getFollowersQuery);
     $res = $res->fetch_all(MYSQLI_ASSOC);
@@ -40,13 +47,18 @@
     $res = $res->fetch_all(MYSQLI_ASSOC);
     $posts = count($res);
 
+    $res = $connection_to_db->query($getChatsWithUser);
+    $res = $res->fetch_all(MYSQLI_ASSOC);
+    $chat = $res;
+
     $resp = [
         "status" => "ok",
         "info" => $userInfo[0],
         "followers" => $followers,
         "followings" => $followings,
         "photos" => $photos,
-        "posts" => $posts
+        "posts" => $posts,
+        "chat" => $chat[0]['Id']
     ];
 
     if(isset($_COOKIE["hash"])) {

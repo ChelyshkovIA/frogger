@@ -54,14 +54,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     followers.append(resp.followers);
                     followings.append(resp.followings);
     
-                    if(resp.state == 'auth') {
-                        if(resp.page == 'user') {
+                    if (resp.state == 'auth') {
+                        if (resp.page == 'user') {
                             let postsBlock = document.querySelector('.account-info__block-item--posts');
     
                             let addPost = document.createElement('span');
                             addPost.className = 'account-info__block-item-icon account-info__block-item-icon--add-post icon-plus-1';
                             postsBlock.append(addPost);
-                        }else {
+                        } else {
                             let connectionTools = document.createElement('div');
                             connectionTools.className = 'account-info__connection-tools account-info__connection-tools--active';
     
@@ -73,7 +73,8 @@ window.addEventListener('DOMContentLoaded', function() {
                             messageBtn.type = 'button';
                             messageBtn.className = 'account-info__btn account-info__btn--message';
                             messageBtn.value = 'Message';
-                            openMail(messageBtn);
+                            
+                            openMail(messageBtn, resp.info.Name, resp.info.Surname, resp.info.Login, resp.chat);
     
                             connectionTools.append(toSubBtn);
                             connectionTools.append(messageBtn);
