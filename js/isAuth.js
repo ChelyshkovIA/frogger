@@ -3,6 +3,7 @@ import {openMail} from './mail.js';
 import {generateMainPage} from './generateMainPage.js';
 import {generateAccount} from './generateAccount.js';
 import {accountLogic} from './account.js';
+import {hideMailBlock} from './hideMailBlock.js';
 
 function isAuth() {
     let nav = document.querySelector('.body-menu');
@@ -12,7 +13,6 @@ function isAuth() {
     if (login) {
         document.querySelector('.form-block').classList.add('form-block--hidden');
         
-
         let logOut = document.createElement('a');
         logOut.className = 'body-menu__link body-menu__link--logout';
         logOut.href = 'php/logout.php';
@@ -44,6 +44,7 @@ function isAuth() {
         myPage.append(myPageText);
 
         myPage.addEventListener('click', function() {
+            hideMailBlock();
             generateAccount();
             accountLogic(login);
         });
@@ -59,6 +60,7 @@ function isAuth() {
         feed.append(feedText);
 
         feed.addEventListener('click', function() {
+            hideMailBlock();
             generateMainPage();
         });
 
@@ -97,6 +99,12 @@ function isAuth() {
         feedText.append('Feed');
         feed.append(feedIcon);
         feed.append(feedText);
+
+        feed.addEventListener('click', function() {
+            document.querySelector('.form-block').classList.remove('form-block--hidden');
+            hideMailBlock();
+            generateMainPage();
+        });
 
         nav.append(logIn);
         nav.append(signUp);

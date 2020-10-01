@@ -1,5 +1,3 @@
-import {getCookie} from './getCookie.js';
-
 function generateMainPage() {
     let header = document.querySelector('.header');
     header.className = 'header header--index';
@@ -69,7 +67,7 @@ function generateMainPage() {
     header.append(photoBlock);
 
     let feed = document.querySelector('.posts-block');
-    while (feed.children.length != 0) feed.children[0].remove();
+    // while (feed.children.length != 0) feed.children[0].remove();
 }
 
 export {

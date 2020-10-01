@@ -160,6 +160,7 @@ input, button {
   font-family: "Abel", sans-serif;
 }
 .post .post-info .post-info__user {
+  cursor: pointer;
   margin-left: auto;
   color: #fff;
   font-size: 18px;
@@ -562,23 +563,6 @@ input, button {
     font-size: 23px;
   }
 }
-@keyframes rollingLoad {
-  0% {
-    transform: rotate(0deg);
-    border-top: 2px solid #68647c;
-    border-bottom: 2px solid #68647c;
-  }
-  50% {
-    transform: rotate(180deg);
-    border-top: 2px solid rgba(104, 100, 124, 0);
-    border-bottom: 2px solid rgba(104, 100, 124, 0);
-  }
-  100% {
-    transform: rotate(360deg);
-    border-top: 2px solid #68647c;
-    border-bottom: 2px solid #68647c;
-  }
-}
 .mail-block {
   display: none;
   z-index: 19;
@@ -814,25 +798,6 @@ input, button {
   text-align: center;
   font-family: "Abel", sans-serif;
   font-size: 17px;
-}
-.mail-block .chat .chat__loading-indicator {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border: 3px solid #68647c;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
-  border-left: 3px solid rgba(0, 0, 0, 0);
-  border-right: 3px solid rgba(0, 0, 0, 0);
-  animation-name: rollingLoad;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-duration: 1s;
 }
 .mail-block .chat .mess {
   width: 100%;
@@ -1255,6 +1220,43 @@ input, button {
 .account-info .account-info__block .account-info__block-item .account-info__block-item-icon:hover {
   font-size: 18px;
   padding: 0 0 0 0;
+}
+
+@keyframes rollingLoad {
+  0% {
+    transform: rotate(0deg);
+    border-top: 2px solid rgba(104, 100, 124, 0);
+    border-bottom: 2px solid rgba(104, 100, 124, 0);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-bottom: 2px solid #68647c;
+    border-top: 2px solid #68647c;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top: 2px solid rgba(104, 100, 124, 0);
+    border-bottom: 2px solid rgba(104, 100, 124, 0);
+  }
+}
+.chat__loading-indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 3px solid #68647c;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border-left: 3px solid rgba(0, 0, 0, 0);
+  border-right: 3px solid rgba(0, 0, 0, 0);
+  animation-name: rollingLoad;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 1s;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,13 +1,18 @@
 import {validateWord} from './validateWordUpper.js';
 import {loadChat} from './loadChat.js';
 
-function loadMail() {
+function loadMail(resolve, reject) {
+    let loadIndicator = document.createElement('div');
+    loadIndicator.className = 'chat__loading-indicator';
+    document.querySelector('.mess-block').append(loadIndicator);
+    
     let req = new XMLHttpRequest();
     let url = '../php/getMail.php';
     req.open('POST', url);
     req.send();
 
     req.addEventListener('load', function() {
+        loadIndicator.remove();
         try {
             let resp = JSON.parse(this.response);
 
@@ -90,13 +95,15 @@ function loadMail() {
                             messBlock.append(article);
                         });
                     }
-
+                    resolve();
                     break;
                 default:
+                    reject('error: row 101 loadMail.js');
                     return;    
             }
-        }catch(e) {
-            console.log(e);
+        }catch(error) {
+            reject(error);
+            console.log(error);
         }
     });
 }

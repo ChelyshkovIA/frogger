@@ -2,8 +2,9 @@ import {scrollLogic} from './scrollLogic.js';
 import {toRegistrate} from './registration.js';
 import {login} from './login.js';
 import {isAuth} from './isAuth.js';
-import {loadMail} from './loadMail.js';
 import {generateMainPage} from './generateMainPage.js';
+import {generateAccount} from './generateAccount.js';
+import {accountLogic} from './account.js';
 
 addEventListener('DOMContentLoaded', function() {
     generateMainPage();
@@ -16,6 +17,13 @@ addEventListener('DOMContentLoaded', function() {
     scrollLogic(bodyImg);
     toRegistrate(regForm);
     login(authForm);
-    
-    loadMail();
+
+    _testLink();
+    function _testLink() {
+        let testLink = document.getElementById('test-link');
+        testLink.addEventListener('click', function() {
+            generateAccount();
+            accountLogic('hanna');
+        });
+    }
 });

@@ -1,7 +1,6 @@
 import {scrollLogic} from './scrollLogic.js';
 import {isAuth} from './isAuth.js';
 import {openMail} from './mail.js';
-import {loadMail} from './loadMail.js';
 import {validateWord} from './validateWordUpper.js';
 
 
@@ -15,7 +14,8 @@ function accountLogic(user) {
         try {
             let resp = JSON.parse(this.response);
             switch(resp.status) {
-                case 'ok':   
+                case 'ok':
+                    window.scrollTo(0, 0);   
                     let name         = document.querySelector('.user-info__user-name');
                     let login        = document.querySelector('.user-info__login');
                     let country      = document.querySelector('#country');
@@ -110,7 +110,6 @@ function accountLogic(user) {
                                 });
                             });
                         }
-                        loadMail();
                     }
     
                     break;

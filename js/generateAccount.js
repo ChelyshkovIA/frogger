@@ -3,6 +3,8 @@ function generateAccount() {
     header.className = 'header header--account';
 
     while (header.children.length != 0) header.children[0].remove();
+    let formBlock = document.querySelector('.form-block');
+    formBlock.classList.add('form-block--hidden');
 
     let userInfo = document.createElement('div');
     userInfo.className = 'header__user-info user-info';
@@ -115,7 +117,7 @@ function generateAccount() {
     header.append(accountInfo);
 
     let feed = document.querySelector('.posts-block');
-    while (feed.children.length !== 0) feed.children[0].remove();
+    // while (feed.children.length !== 0) feed.children[0].remove();
 }
 
 export {

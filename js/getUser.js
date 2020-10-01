@@ -1,7 +1,0 @@
-function getUser() {
-
-}
-
-export {
-    getUser
-}
