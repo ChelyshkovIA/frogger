@@ -80,6 +80,11 @@ function isAuth() {
         logIn.append(logInIcon);
         logIn.append(logInText);
 
+        logIn.addEventListener('click', function() {
+            document.querySelector('.form-block').classList.remove('form-block--hidden');
+            generateMainPage();
+        });
+
         let signUp = document.createElement('a');
         signUp.className = 'body-menu__link body-menu__link--signUp';
         signUp.href = 'index.html#regForm';
@@ -89,6 +94,11 @@ function isAuth() {
         signUpText.append('Signup');
         signUp.append(signUpIcon);
         signUp.append(signUpText);
+
+        signUp.addEventListener('click', function() {
+            document.querySelector('.form-block').classList.remove('form-block--hidden');
+            generateMainPage();
+        });
 
         let feed = document.createElement('a');
         feed.className = 'body-menu__link';

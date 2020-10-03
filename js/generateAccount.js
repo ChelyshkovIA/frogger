@@ -19,6 +19,9 @@ function generateAccount() {
     let userName = document.createElement('h1');
     userName.className = 'user-info__user-name';
 
+    let state = document.createElement('span');
+    state.className = 'user-info__state';
+
     let about = document.createElement('div');
     about.className = 'user-info__about';
 
@@ -33,6 +36,8 @@ function generateAccount() {
 
     let country = document.createElement('span');
     country.id = 'country';
+
+    userName.append(state);
 
     countryBlock.append(countryIcon);
     countryBlock.append(country);

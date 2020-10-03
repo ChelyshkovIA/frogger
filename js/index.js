@@ -5,10 +5,12 @@ import {isAuth} from './isAuth.js';
 import {generateMainPage} from './generateMainPage.js';
 import {generateAccount} from './generateAccount.js';
 import {accountLogic} from './account.js';
+import {getConnection} from './connectionSocket.js';
 
 addEventListener('DOMContentLoaded', function() {
     generateMainPage();
     isAuth();
+    getConnection();
     
     let bodyImg  = document.querySelector('.body-img');
     let regForm  = document.querySelector('.form--reg');
@@ -23,7 +25,7 @@ addEventListener('DOMContentLoaded', function() {
         let testLink = document.getElementById('test-link');
         testLink.addEventListener('click', function() {
             generateAccount();
-            accountLogic('hanna');
+            accountLogic('mark');
         });
     }
 });

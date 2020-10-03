@@ -1105,11 +1105,24 @@ input, button {
   background-color: #fff;
 }
 .user-info .user-info__user-name {
+  display: inline-flex;
+  align-items: center;
   font-family: "Abel", sans-serif;
   font-size: 25px;
   font-weight: bold;
   color: #454545;
   padding: 20px 0 0 0;
+}
+.user-info .user-info__state {
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #1d8f4f;
+  margin: 0 5px;
+}
+.user-info .user-info__state.user-info__state--active {
+  display: inline-block;
 }
 .user-info .user-info__about {
   width: 100%;

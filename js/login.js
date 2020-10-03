@@ -1,5 +1,6 @@
 import {generateAccount} from './generateAccount.js';
 import {accountLogic} from './account.js';
+import {getConnection} from './connectionSocket.js';
 
 function login(form) {
     function renameFormHeader (text, className, removeState = true) {
@@ -47,7 +48,16 @@ function login(form) {
                     switch(resp.status) {
                         case 'ok':
                             generateAccount();
-                            accountLogic(resp.login);
+                            // accountLogic();
+                            new Promise ((resolve, reject) => {
+                                accountLogic(resp.login, resolve, reject);
+                            })
+                            .then(() => {
+                                getConnection();
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
                             break;
                         case 'err1' :
                             renameFormHeader ('Empty values!', 'form-title--wrong');

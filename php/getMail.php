@@ -13,7 +13,7 @@
         $res = $res->fetch_all(MYSQLI_ASSOC);
         if(count($res) == 1) {
             $getChatsQuery = 
-           "SELECT Chats.Id AS ChatId, Users.Name, Users.Surname, Users.Login, Messages.Text, Messages.DateTime, UsersFrom.Name AS UserFromName, UsersFrom.Surname AS UserFromSurname, UsersDialogName.Name AS DialogName, UsersDialogName.Surname AS DialogSurname   
+           "SELECT Chats.Id AS ChatId, Users.Name, Users.Surname, Users.Login, Messages.Text, Messages.DateTime, Messages.Id AS MessId, UsersFrom.Name AS UserFromName, UsersFrom.Surname AS UserFromSurname, UsersDialogName.Name AS DialogName, UsersDialogName.Surname AS DialogSurname   
             FROM Users
             INNER JOIN ChatsUsers ON Users.Id = ChatsUsers.IdUser
             INNER JOIN Chats ON Chats.Id = ChatsUsers.IdChat
@@ -27,7 +27,7 @@
                 INNER JOIN Users ON Users.Id = ChatsUsers.IdUser
                 INNER JOIN Messages ON Messages.IdChat = Chats.Id
                 WHERE Users.Login = '$user' AND Users.Hash = '$hash' GROUP BY Chats.Id
-            ) GROUP BY Chats.Id";
+            ) GROUP BY Chats.Id ORDER BY MessId DESC";
 
             $res = $connection_to_db->query($getChatsQuery);
             $res = $res->fetch_all(MYSQLI_ASSOC);

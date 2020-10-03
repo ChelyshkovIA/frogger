@@ -4,12 +4,15 @@ import {clearMessList} from './clearMessList.js';
 // import {getCookie} from './getCookie';
 
 function loadChat(item, mailBlock, chat, dialogName, login = '') {
+    console.log(item);
     let messBlock = chat.querySelector('.chat__mess-block');
 
     clearMessList(messBlock);
 
     mailBlock.classList.add('mail-block--chat-active');
     chat.classList.add('chat--active');
+    chat['data-chat'] = item.ChatId;
+    chat['data-to'] = item.To;
     dialogName.innerText = '';
     dialogName.append(`${validateWord(item.DialogName)} ${validateWord(item.DialogSurname)}`);
 

@@ -324,3 +324,52 @@ Stack trace:
 #6 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(184): Workerman\Worker::runAll()
 #7 {main}
 2020-10-01 14:40:38 pid:1 Worker process terminated
+2020-10-02 14:25:08 pid:1 Worker process terminated
+2020-10-02 17:33:13 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class stdClass could not be converted to string in C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php on line 39"
+2020-10-02 17:35:33 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class stdClass could not be converted to string in C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php on line 39"
+2020-10-02 21:39:56 pid:1 Error: Call to undefined function _sendMessage() in C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php:43
+Stack trace:
+#0 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Connection\TcpConnection.php(660): {closure}(Object(Workerman\Connection\TcpConnection), Object(stdClass))
+#1 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Events\Select.php(293): Workerman\Connection\TcpConnection->baseRead(Resource id #25)
+#2 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(2417): Workerman\Events\Select->loop()
+#3 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1405): Workerman\Worker->run()
+#4 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1348): Workerman\Worker::forkWorkersForWindows()
+#5 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#6 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(63): Workerman\Worker::runAll()
+#7 {main}
+2020-10-02 21:39:56 pid:1 Worker process terminated
+2020-10-02 21:41:28 pid:1 Error: Call to undefined function _updateMessages() in C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php:40
+Stack trace:
+#0 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Connection\TcpConnection.php(660): {closure}(Object(Workerman\Connection\TcpConnection), Object(stdClass))
+#1 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Events\Select.php(293): Workerman\Connection\TcpConnection->baseRead(Resource id #25)
+#2 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(2417): Workerman\Events\Select->loop()
+#3 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1405): Workerman\Worker->run()
+#4 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1348): Workerman\Worker::forkWorkersForWindows()
+#5 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#6 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(63): Workerman\Worker::runAll()
+#7 {main}
+2020-10-02 21:41:28 pid:1 Worker process terminated
+2020-10-02 21:42:13 pid:1 Error: Call to a member function send() on null in C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\sendMessage.php:20
+Stack trace:
+#0 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(44): _sendMessage(Object(mysqli), '1', 'great', 'test 1', Array)
+#1 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Connection\TcpConnection.php(660): {closure}(Object(Workerman\Connection\TcpConnection), Object(stdClass))
+#2 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Events\Select.php(293): Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#3 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(2417): Workerman\Events\Select->loop()
+#4 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1405): Workerman\Worker->run()
+#5 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1348): Workerman\Worker::forkWorkersForWindows()
+#6 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#7 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(64): Workerman\Worker::runAll()
+#8 {main}
+2020-10-02 21:42:13 pid:1 Worker process terminated
+2020-10-03 14:48:30 pid:1 Error: Call to a member function send() on null in C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\sendMessage.php:20
+Stack trace:
+#0 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(44): _sendMessage(Object(mysqli), '1', 'great', 'privet', Array)
+#1 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Connection\TcpConnection.php(660): {closure}(Object(Workerman\Connection\TcpConnection), Object(stdClass))
+#2 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Events\Select.php(293): Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#3 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(2417): Workerman\Events\Select->loop()
+#4 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1405): Workerman\Worker->run()
+#5 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(1348): Workerman\Worker::forkWorkersForWindows()
+#6 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\vendor\workerman\workerman\Worker.php(542): Workerman\Worker::forkWorkers()
+#7 C:\Ilya\dev\WEB\OS\OSPanel\domains\frogger\php\chatWorker.php(64): Workerman\Worker::runAll()
+#8 {main}
+2020-10-03 14:48:30 pid:1 Worker process terminated

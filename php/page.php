@@ -13,7 +13,7 @@
     $user = strtolower($_GET["user"]);
     $cookieUser = strtolower($_COOKIE["user"]);
     
-    $getUserInfoQuery = "SELECT Id, Country, Login, Name, Surname FROM Users WHERE Users.Login = '$user'";
+    $getUserInfoQuery = "SELECT Id, Country, Login, Name, Surname, State FROM Users WHERE Users.Login = '$user'";
     $res = $connection_to_db->query($getUserInfoQuery);
     $res = $res->fetch_all(MYSQLI_ASSOC);
     $userId = $res[0]["Id"];

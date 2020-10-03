@@ -4,7 +4,7 @@ import {openMail} from './mail.js';
 import {validateWord} from './validateWordUpper.js';
 
 
-function accountLogic(user) {
+function accountLogic(user, resolve = function() {}, reject = function () {}) {
     
     let getPageReq = new XMLHttpRequest();
     let url = `../php/page.php?user=${user}`;
@@ -15,7 +15,8 @@ function accountLogic(user) {
             let resp = JSON.parse(this.response);
             switch(resp.status) {
                 case 'ok':
-                    window.scrollTo(0, 0);   
+                    window.scrollTo(0, 0);  
+                    let state        = document.querySelector('.user-info__state'); 
                     let name         = document.querySelector('.user-info__user-name');
                     let login        = document.querySelector('.user-info__login');
                     let country      = document.querySelector('#country');
@@ -23,7 +24,9 @@ function accountLogic(user) {
                     let photosNumber = document.querySelector('#photo-number');
                     let followers    = document.querySelector('#followers-number');
                     let followings   = document.querySelector('#followings-number');
-    
+
+                    if (resp.info.State == 1) state.classList.add('user-info__state--active');
+
                     let nameVal = resp.info.Name.split('');
                     nameVal[0] = nameVal[0].toUpperCase();
                     nameVal = nameVal.join('');
@@ -42,7 +45,8 @@ function accountLogic(user) {
                     if (resp.state == 'auth') {
                         if (resp.page == 'user') {
                             let postsBlock = document.querySelector('.account-info__block-item--posts');
-    
+                            state.classList.add('user-info__state--active');
+                            
                             let addPost = document.createElement('span');
                             addPost.className = 'account-info__block-item-icon account-info__block-item-icon--add-post icon-plus-1';
                             postsBlock.append(addPost);
@@ -102,6 +106,7 @@ function accountLogic(user) {
                                             followers.innerText = --followers.innerText;
                                             break;
                                         case 'err':
+                                            reject('err: accountLogic.js, row 105');
                                             console.log('err');
                                             break;
                                         default:
@@ -111,22 +116,24 @@ function accountLogic(user) {
                             });
                         }
                     }
-    
                     break;
                 case 'err1':
                     console.log('err1');
+                    reject('err1: accountLogic.js, row 118');
                     break;    
                 default:
                     return;    
             }
-        }catch(e) {
+        } catch (error) {
             alert('Error!');
-            console.log(e);
+            console.log(error);
+            reject(error);
         }
     
         isAuth();
         let bodyImg = document.querySelector('.body-img');
         scrollLogic(bodyImg);
+        resolve();
     });
 }
 
