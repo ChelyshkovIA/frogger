@@ -4,8 +4,11 @@ import {getCookie} from './getCookie.js';
 import {loadMail} from './loadMail.js';
 
 function openMail (mail, name = '', surname = '', login = '', chatId = '') {
+    const bg = document.querySelector('.bg');
 
     mail.addEventListener('click', function() {
+        document.body.style.overflow = 'hidden';
+        bg.classList.add('bg--active');
         new Promise(function (resolve, reject) {
             loadMail(resolve, reject);
         })
@@ -26,8 +29,20 @@ function openMail (mail, name = '', surname = '', login = '', chatId = '') {
     
             searchForm.classList.add('searching-form--active');
             mailBlock.classList.add('mail-block--active');
-    
+            
+            bg.addEventListener('click', function() {
+                bg.classList.remove('bg--active');
+                document.body.style.overflow = 'inherit';
+                searchForm.classList.remove('searching-form--active');
+                mailBlock.classList.remove('mail-block--active');
+                chat.classList.remove('chat--active');
+                mailBlock.classList.remove('mail-block--chat-active');
+                clearMessList(messList);
+            });
+
             closeMess.addEventListener('click', function() {
+                bg.classList.remove('bg--active');
+                document.body.style.overflow = 'inherit';
                 searchForm.classList.remove('searching-form--active');
                 mailBlock.classList.remove('mail-block--active');
                 chat.classList.remove('chat--active');

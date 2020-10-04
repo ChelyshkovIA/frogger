@@ -6,6 +6,7 @@ import {accountLogic} from './account.js';
 import {hideMailBlock} from './hideMailBlock.js';
 
 function isAuth() {
+    const bg = document.querySelector('.bg');
     let nav = document.querySelector('.body-menu');
     while (nav.children.length != 0) nav.children[0].remove();
 
@@ -44,6 +45,7 @@ function isAuth() {
         myPage.append(myPageText);
 
         myPage.addEventListener('click', function() {
+            bg.classList.remove('bg--active');
             hideMailBlock();
             generateAccount();
             accountLogic(login);
@@ -60,6 +62,7 @@ function isAuth() {
         feed.append(feedText);
 
         feed.addEventListener('click', function() {
+            bg.classList.remove('bg--active');
             hideMailBlock();
             generateMainPage();
         });

@@ -1,8 +1,14 @@
 import {getCookie} from './getCookie.js';
+import {loadMail} from './loadMail.js';
 
 function getConnection() {
     const sendBtn = document.getElementById('sendBtn');
     const input = document.getElementById('chatInput');
+    const mailMenu = document.querySelector('.mail-block');
+    const dialogsBlock = document.querySelector('.mess-block');
+    const chat = document.querySelector('.chat');
+    let chatMessBlock = document.querySelector('.chat__mess-block');
+
     const user = getCookie('user');
     const hash = getCookie('hash');
 
@@ -44,6 +50,48 @@ function getConnection() {
                         try {
                             const message = JSON.parse(event.data);
                             console.log(message);
+
+                            if (mailMenu.classList.contains('mail-block--active')) {
+                                
+                                let dialog = document.querySelector(`.dialog[data-chat="${message.chat}"]`);
+                                if (dialog) {
+                                    dialogsBlock.prepend(dialog);
+                                    dialog.querySelector('.dialog__text').innerText = message.message;
+                                } else {
+                                    loadMail();
+                                }
+
+
+                                
+                                if (chat.classList.contains('chat--active') && chat.dataset.chat == message.chat) {
+                                    if(chatMessBlock.classList.contains('chat__mess-block--empty')) {
+                                        chatMessBlock.children[0].remove();
+                                        chatMessBlock.classList.remove('chat__mess-block--empty');
+                                    }
+                                    let mess = document.createElement('article');
+                                    mess.className = 'chat__mess mess';
+                                    mess.classList.add(`${message.from == user ? 'mess--right' : 'mess--left'}`);
+
+                                    let messBody = document.createElement('div');
+                                    messBody.className = 'mess-body';
+
+                                    let text = document.createElement('p');
+                                    text.className = 'mess__text';
+
+                                    let time = document.createElement('div');
+                                    time.className = 'mess__time';
+
+                                    text.append(message.message);
+                                    time.append('null');
+
+                                    messBody.append(text);
+                                    messBody.append(time);
+                                    mess.append(messBody);
+
+                                    chatMessBlock.append(mess);
+                                    chatMessBlock.scrollTo(0, chatMessBlock.scrollHeight);
+                                }
+                            }
                         } catch (error) {
                             console.log(error);
                         }

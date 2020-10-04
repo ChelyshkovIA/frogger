@@ -972,6 +972,9 @@ input, button {
   .mail-block .mess-block .searching-form.searching-form--active {
     left: 65px;
   }
+  .mail-block .mess-block .dialogs__block {
+    width: 100%;
+  }
   .mail-block .chat {
     display: none;
     padding: 0;
@@ -1270,6 +1273,21 @@ input, button {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-duration: 1s;
+}
+
+.bg {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(24, 21, 34, 0.75);
+  z-index: 6;
+}
+.bg.bg--active {
+  display: block;
 }
 
 /*# sourceMappingURL=index.css.map */

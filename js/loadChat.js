@@ -11,7 +11,7 @@ function loadChat(item, mailBlock, chat, dialogName, login = '') {
 
     mailBlock.classList.add('mail-block--chat-active');
     chat.classList.add('chat--active');
-    chat['data-chat'] = item.ChatId;
+    chat.dataset.chat = item.ChatId;
     chat['data-to'] = item.To;
     dialogName.innerText = '';
     dialogName.append(`${validateWord(item.DialogName)} ${validateWord(item.DialogSurname)}`);
@@ -59,16 +59,14 @@ function loadChat(item, mailBlock, chat, dialogName, login = '') {
                         messBlock.append(message);
                     });
                     
-                    // chatConnection(item);
+                    messBlock.scrollTo(0, messBlock.scrollHeight);
                     break;
                 case 'no chat':
-                    // item.from = getCookie('user');
                     let chatInfo = document.createElement('p');
                     chatInfo.className = 'chat__info';
                     chatInfo.append(`You don't have any messages with ${validateWord(item.DialogName)}`);
                     messBlock.append(chatInfo);
-                    
-                    // chatConnection(item);
+                    messBlock.classList.add('chat__mess-block--empty');
                     break;    
                 case 'err1':
                     break;
