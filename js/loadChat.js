@@ -1,7 +1,5 @@
 import {validateWord} from './validateWordUpper.js';
 import {clearMessList} from './clearMessList.js';
-// import {chatConnection} from './chatConnection.js';
-// import {getCookie} from './getCookie';
 
 function loadChat(item, mailBlock, chat, dialogName, login = '') {
     console.log(item);
@@ -12,7 +10,7 @@ function loadChat(item, mailBlock, chat, dialogName, login = '') {
     mailBlock.classList.add('mail-block--chat-active');
     chat.classList.add('chat--active');
     chat.dataset.chat = item.ChatId;
-    chat['data-to'] = item.To;
+    chat.dataset.to = item.To;
     dialogName.innerText = '';
     dialogName.append(`${validateWord(item.DialogName)} ${validateWord(item.DialogSurname)}`);
 

@@ -46,6 +46,7 @@ function isAuth() {
 
         myPage.addEventListener('click', function() {
             bg.classList.remove('bg--active');
+            document.body.style.overflow = 'inherit';
             hideMailBlock();
             generateAccount();
             accountLogic(login);
@@ -63,6 +64,7 @@ function isAuth() {
 
         feed.addEventListener('click', function() {
             bg.classList.remove('bg--active');
+            document.body.style.overflow = 'inherit';
             hideMailBlock();
             generateMainPage();
         });

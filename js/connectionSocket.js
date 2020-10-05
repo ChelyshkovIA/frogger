@@ -63,7 +63,7 @@ function getConnection() {
 
 
                                 
-                                if (chat.classList.contains('chat--active') && chat.dataset.chat == message.chat) {
+                                if (chat.classList.contains('chat--active') && (chat.dataset.chat == message.chat || chat.dataset.chat == 'null')) {
                                     if(chatMessBlock.classList.contains('chat__mess-block--empty')) {
                                         chatMessBlock.children[0].remove();
                                         chatMessBlock.classList.remove('chat__mess-block--empty');
@@ -115,8 +115,8 @@ function getConnection() {
     
     sendBtn.addEventListener('click', function() {
         if (input.value.length === 0 || input.value.length > 1000) return;
-        const chat = document.querySelector('.chat')['data-chat'];
-        const to = document.querySelector('.chat')['data-to'];
+        const chat = document.querySelector('.chat').dataset.chat;
+        const to = document.querySelector('.chat').dataset.to;
         const text = input.value;
         const dataObj = new MessageData('message', user, hash, text, chat, to);
         input.value = '';
